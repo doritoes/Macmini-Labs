@@ -1,8 +1,26 @@
-# Mac mini A1337 (Mid 2010)
-The "Mac Mini 2010" is an older model with some interesting features. In this lab we will refurbing and restore a Mac mini and put it to use in the Lab.
+# Mac mini A1347
+The "Mac Mini 2010" is an older model with some interesting features. In this lab we will refurbishing and restore a Mac mini and put it to use in the Lab.
+
+You can find a lot of Mac mini A1347 computers for sale on eBay. There are a number of varieties available. Be mindful that a number are sold "as-is" and "for parts only".
+
+In this lab we will be using an "A1347" with an Intel processor.
+- Covers 2010-2014 model years
+- Learn more at https://everymac.com/systems/apple/mac_mini/mac-mini-aluminum-unibody-faq/
+- https://everymac.com/ultimate-mac-lookup/?search_keywords=A1347
+
+Pros:
+- the power supply and hard drive are internal and hard to remove, so we see less "stripped" devices on eBay
+- compile list here
+
+Cons:
+- compile list here
+- no recent and supported Mac os versions run on the oldest models
+- difficult to re-image the OS (certificate expiration issues)
 
 # About the unit
-Specifiations: https://support.apple.com/en-us/102852
+In the Lab we will be using mid-2010 units with the 2.4GHz processor. Later versions of the A1347 can run later versions of MacOS and might have different ports or features.
+
+Specifications: https://support.apple.com/en-us/102852
 
 ![image](https://github.com/doritoes/Macmini-Labs/assets/39832079/a45240dd-171b-4dac-a249-1ce2c629e9f3)
 
