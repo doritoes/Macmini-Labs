@@ -37,7 +37,7 @@ Remove the bottom panel by rotating it, and inspect the RAM sticks. Replace the 
 Running hardware diagnostics is meant to be simple and easy: press and hold the "D" key when powering on.
 - Apple Diagnostics - https://support.apple.com/en-us/102550
 
-However, in my Lab test I received the error "Apple Hardware Test not compatible with this machine". Pressing and holding Option (⌥)-D didn't do anything for me.
+However, in my Lab test I received the error "Apple Hardware Test does not support this machine". Pressing and holding Option (⌥)-D gave the same results. If you device runs it successfully, for any any hardware issues.
 
 ## If It Won't Boot
 Troubleshoot boot failure:
