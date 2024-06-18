@@ -31,3 +31,4 @@ Steps:
   - When done, quit Disk Utilty and return to the utilities window in Recovery
   - Select Reinstall macOS in the utilities window
     - click Continue and follow the onscreen instructions
+    - for Lab use, skip configuring an Apple ID/login
