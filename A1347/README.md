@@ -72,6 +72,7 @@ Storage
 # Overview
 ## Inventory
 In this step, evaluate the state of the Mac mini
+
 [Inventory](1_Inventory.md)
 
 https://support.apple.com/en-us/102550 Apple Diagnostics
