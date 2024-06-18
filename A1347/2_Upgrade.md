@@ -27,3 +27,6 @@ Installing macOS High Sierra
 - https://www.ifixit.com/Guide/How+to+Install+macOS+High+Sierra/751
 - requires creating a bootable USB from another MacOS High Sierra system (instructions provided)
 - See also the later step on installing macOS
+- the Internet recovery method for older Mac Minis is now broken since a required certificate expired
+- beware purchasing a Windows application to create the Mac installation USB - I had a bad experience with this method
+- you can purchase a bootable USB on eBay, and I had success with this method; some some with multiple installers on one USB ("Mac Repair Service 8 in 1 Bootable USB 3 Flash Drive Installer for 8 OS")
