@@ -8,6 +8,8 @@ In this lab we will be using an "A1347" with an Intel processor.
 
 Pros:
 - the power supply and hard drive are internal and hard to remove, so we see less "stripped" devices on eBay
+- generally cleaner and better cared for than Intel NUCs in my experience
+- able to run other OS (EFI not BIOS)
 
 Cons:
 - no recent and supported Mac os versions run on the oldest models
