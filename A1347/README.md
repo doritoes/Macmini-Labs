@@ -69,25 +69,57 @@ Storage
 - Runing Plex
 - More ideas: https://eshop.macsales.com/blog/76875-6-ways-you-can-use-an-old-or-refurbished-mac-mini/
 
-# Steps
+# Overview
 ## Inventory
+In this step, evaluate the state of the Mac mini
+[Inventory](1_Inventory.md)
+
 https://support.apple.com/en-us/102550 Apple Diagnostics
+
 ## Upgrade RAM and Storage
+Maximize the performance of the device
+
+[Upgrade](2_Upgrade.md)
+
 ## Reload OS
+This step covers reloading the Mac operating system
+
+[Reload](3_Reload.md)
+
 ## Initial Tests
+[Initial Tests](4_Testing.md)
+
+
 ## Install Supported Browser
+No major browsers support even the most recent version of Mac os available for this older Mac mini. Firefox ESR does, though!
+
+[Installing Firefox ESR](5_Browser.md)
+
 ## Install Linux
+Installing Linux on the Mac mini
+
+The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI. You can get into the boot picker by holding Option(Alt on a PC keyboard) at power on. If you want to change setting you do it through EFI variables, or install a compatible EFI boot manager.
+
 https://medium.com/@woodywang2013/linux-on-an-old-mac-mini-f8cb63b7657f
 
-Manjaro, because it is based on Arch Linux,
+Manjaro, because it is based on Arch Linux
 
+- web server
+- Docker
+- what else?
+
+[Installing Linux](6_Linux.md)
 
 ## Proxmox
+Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
 
 The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI. You can get into the boot picker by holding Option(Alt on a PC keyboard) at power on. If you want to change setting you do it through EFI variables, or install a compatible EFI boot manager.
 
 ## Plex
+Media and streaming server
+
 ## NAS
+Use MacOS file sharing
 
 ## Restore MacOS
 https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
