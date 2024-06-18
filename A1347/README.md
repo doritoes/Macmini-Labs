@@ -1,5 +1,7 @@
 # Mac mini A1347
-The "Mac Mini 2010" is an older model with some interesting features. In this lab we will refurbishing and restore a Mac mini and put it to use in the Lab.
+The Mac Mini A1347 is a series of older models with some interesting features. In this lab we will refurbishing and restore a Mac mini and put it to use in the Lab.
+- upgrading RAM to the recommeded 2x 4GB modules
+- replacing the HDD or "fusion" drive with a 2.5" SSD drive
 
 You can find a lot of Mac mini A1347 computers for sale on eBay. There are a number of varieties available. Be mindful that a number are sold "as-is" and "for parts only".
 
