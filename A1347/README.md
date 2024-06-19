@@ -91,33 +91,21 @@ Storage
 
 # Overview
 ## Inventory
-In this step, evaluate the state of the Mac mini
-
-[Inventory](1_Inventory.md)
-
-https://support.apple.com/en-us/102550 Apple Diagnostics
+[Inventory](1_Inventory.md) - In this step, evaluate the state of the Mac mini
 
 ## Upgrade RAM and Storage
-Maximize the performance of the device
-
-[Upgrade](2_Upgrade.md)
-
+[Upgrade](2_Upgrade.md) - Maximize the performance of the device
 ## Reload OS
-This step covers reloading the Mac operating system
-
-[Reload](3_Reload.md)
+[Reload](3_Reload.md) - This step covers reloading the Mac operating system
 
 ## Initial Tests
-[Initial Tests](4_Testing.md)
-
+[Initial Tests](4_Testing.md) - Benchmark and do some initial diagnostics
 
 ## Install Supported Browser
-No major browsers support even the most recent version of Mac os available for this older Mac mini. Firefox ESR does, though!
-
-[Installing Firefox ESR](5_Browser.md)
+[Installing Firefox ESR](5_Browser.md) - No major browsers support even the most recent version of macOS available for this older Mac mini. Firefox ESR does, though!
 
 ## Install Linux
-Installing Linux on the Mac mini
+[Installing Linux](6_Linux.md) - Installing Linux on the Mac mini
 
 The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI. You can get into the boot picker by holding Option(Alt on a PC keyboard) at power on. If you want to change setting you do it through EFI variables, or install a compatible EFI boot manager.
 
@@ -128,8 +116,6 @@ Manjaro, because it is based on Arch Linux
 - web server
 - Docker
 - what else?
-
-[Installing Linux](6_Linux.md)
 
 ## Proxmox
 Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
