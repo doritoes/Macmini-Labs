@@ -98,15 +98,7 @@ Storage
 ## Install Linux
 [Installing Linux](6_Linux.md) - Installing Linux on the Mac mini
 
-The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI. You can get into the boot picker by holding Option(Alt on a PC keyboard) at power on. If you want to change setting you do it through EFI variables, or install a compatible EFI boot manager.
-
-https://medium.com/@woodywang2013/linux-on-an-old-mac-mini-f8cb63b7657f
-
-Manjaro, because it is based on Arch Linux
-
-- web server
-- Docker
-- what else?
+It's astonishingly simple to install Linux. Just insert a bootable installation USB and power on, holding the Option key (Alt on a PC keyboard). The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI, so you will need and installer with UEFI.
 
 ## Proxmox
 Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
