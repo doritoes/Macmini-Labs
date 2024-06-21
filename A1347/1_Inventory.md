@@ -41,6 +41,8 @@ Running hardware diagnostics is meant to be simple and easy: press and hold the 
 
 However, in my Lab test I received the error "Apple Hardware Test does not support this machine". Pressing and holding Option (⌥)-D gave the same results. If you device runs it successfully, for any any hardware issues.
 
+For information on how to boot and run the hardware diagnostics, see https://github.com/upekkha/AppleHardwareTest
+
 ## If It Won't Boot
 Troubleshoot boot failure:
 - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
