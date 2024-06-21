@@ -13,7 +13,7 @@ It's very easy to install Ubuntu Desktop on the mini. I actually used the very s
 What to test? Is there a diagnostics package?
 
 Things to check if they still work:
-- wiki
+- wifi
 
 Projects to try:
 - web server
