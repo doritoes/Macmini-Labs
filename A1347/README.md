@@ -10,15 +10,6 @@ In this lab we will be using an "A1347" with an Intel processor.
 - Learn more at https://everymac.com/systems/apple/mac_mini/mac-mini-aluminum-unibody-faq/
 - https://everymac.com/ultimate-mac-lookup/?search_keywords=A1347
 
-Pros:
-- the power supply and hard drive are internal and hard to remove, so we see less "stripped" devices on eBay
-- compile list here
-
-Cons:
-- compile list here
-- no recent and supported Mac os versions run on the oldest models
-- difficult to re-image the OS (certificate expiration issues)
-
 # About the unit
 In the Lab we will be using mid-2010 units with the 2.4GHz processor. Later versions of the A1347 can run later versions of MacOS and might have different ports or features.
 
