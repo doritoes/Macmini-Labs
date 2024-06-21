@@ -35,6 +35,10 @@ Install Geekbench 6 from the app store.
 2. OmniDiskSweeper
 3. TinkerTool System 6
 
+### Web Development Testing
+1. Install a MAMP stack (Mac Apache MySQL PHP)
+    - https://www.mamp.info/en/downloads/
+
 ### General Usage Testing
 - Test web browsing and speedtest.net
 - Test Wifi
