@@ -1,16 +1,16 @@
 # Upgrade RAM and Storage
 I recommend upgrading the RAM to 8GB (2x 4GB modules):
-- DDR3 1066 MHz and 1.5V to work
-- Using 1.35V or faster DDR RAM will result in failure to boot
+- DDR3 1066 MHz and 1.5V
+- Using 1.35V DDR RAM will result it failure to boot
 
 The storage drive can be replaced with a 2.5" SSD of your choice.
-- The 2010 Mac Mini has a SATA ll G3 controller, so you will need to make sure that whatever drive you select (SSD or HDD) is compatible or backwards compatible to SATA ll 3G.
-- Reportedly utilizes SATA2 but see,s to perform at SATA1 speeds due to controller issues.
+- The 2010 Mac Mini has a SATA II G3 controller, so you will need to make sure that whatever drive you select (SSD or HDD) is compatible or backwards compatible to SATA II 3G.
+- Reportedly utilizes SATA2 but seems to perform at SATA1 speeds due to controller issues
 - Samsung or Crucial are recommended brands
 
 Requirements:
 - Mac Mini toolkit
-- If you are replacing the storage, you will need a bootable MacOS High Sierra USB stick
+- If you are replacing the storage, you will need a bootable MacOS High Sierra USB stick to install the OS when you are done
 
 ## RAM
 Difficulty: Easy
