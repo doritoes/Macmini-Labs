@@ -1,22 +1,4 @@
 # Inventory
-You can find a lot of Mac mini A1347 computers for sale on eBay. There are a number of varieties available. Be mindful that a number are sold "as-is" and "for parts only".
-
-In this lab we will be using an "A1347" with an Intel processor.
-- Covers 2010-2014 model years
-- Learn more at https://everymac.com/systems/apple/mac_mini/mac-mini-aluminum-unibody-faq/
-- https://everymac.com/ultimate-mac-lookup/?search_keywords=A1347
-
-Pros:
-- the power supply and hard drive are internal and hard to remove, so we see less "stripped" devices on eBay
-- generally cleaner and better cared for than Intel NUCs in my experience
-- able to run other OS (EFI not BIOS)
-
-Cons:
-- no recent and supported Mac os versions run on the oldest models
-- requires specialized tools (there are many "Mac Mini Tool Kit" options for sale on-line)
-- difficult to re-image the OS on older minis due to certificate expiration issues affecting Internet recover
-- not technically required, but a <ins>used</ins> Mac keyboard is worth the extra expense
-
 ## Identify the model
 The first step it to identify which one you have.
 - The best way is to boot it it up and check
