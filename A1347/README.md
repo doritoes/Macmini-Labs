@@ -62,14 +62,24 @@ Storage
 - Maximum read: 8x DVD-R, DVD+R, DVD-ROM, DVD-ROM (double layer DVD-9), DVD-R DL (double layer), DVD+R DL (double layer), DVD-RW, and DVD+RW; 24x CD
 - Maximum write: 8x DVD-R, DVD+R; 6x DVD-R DL (double layer), DVD+R DL (double layer), DVD-RW; 8x DVD+RW; 24x CD-R; 24x CD-RW
 
-## Challenges
-1. the internet recovery method no longer works on this older unit due to certificate expiration/issues
-2. limited to two 4GB RAM sticks
-2. difficult to create a restoration USB stick
-3. specialized tools neeeded to work on the hardware
-4. delicate touch needed working on the hardware
-5. limited to very old OS macos High Sierra 10.13
-6. macOS 10.13 to no supported by most modern software (including Microsoft office apps, browsers, etc)
+## Pros, Cons and Challenges
+Pros:
+- the power supply and hard drive are internal and hard to remove, so we see less "stripped" devices on eBay
+- generally cleaner and better cared for than Intel NUCs in my experience
+- able to run other OS (EFI support, but not BIOS)
+- technically supports up to 16GB RAM (but caveats apply)
+Cons:
+- no recent and supported macOS versions run on the oldest models
+  - limited to very old OS macos High Sierra 10.13 (later A1347 models may support later versions)
+  - majority of modern apps don't run on this version (Microsoft Office, Browsers, etc)
+  - limited to two 4GB RAM sticks (total 8GB) unless specific conditions are met
+
+- difficult to re-image the OS on older minis due to Internet recover no longer working
+  - Internet recovery no longer works on this older unit due to certificate expiration/issues
+  - difficult to create a restoration USB stick
+- requires specialized tools to disassemble (there are many "Mac Mini Tool Kit" options for sale on-line)
+- delicate touch needed working on the hardware
+- not technically required, but a <ins>used</ins> Mac keyboard is worth the extra expense
 
 ## Common uses
 - As a [server](https://support.apple.com/guide/mac-mini/use-mac-mini-as-a-server-apd05a94454f/mac)
