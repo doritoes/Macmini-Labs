@@ -1,14 +1,15 @@
 # Mac mini A1347
-The Mac Mini A1347 is a series of older models with some interesting features. In this lab we will refurbishing and restore a Mac mini and put it to use in the Lab.
-- upgrading RAM to the recommeded 2x 4GB modules
-- replacing the HDD or "fusion" drive with a 2.5" SSD drive
+The Mac mini A1347 is a series of older models with some interesting features. In this lab we will refurbishing and restore a Mac mini and put it to use in the Lab.
+- Covers 2010-2014 model years
+- Intel processor
+- Learn more at https://everymac.com/systems/apple/mac_mini/mac-mini-aluminum-unibody-faq/
+- https://everymac.com/ultimate-mac-lookup/?search_keywords=A1347
 
 You can find a lot of Mac mini A1347 computers for sale on eBay. There are a number of varieties available. Be mindful that a number are sold "as-is" and "for parts only".
 
-In this lab we will be using an "A1347" with an Intel processor.
-- Covers 2010-2014 model years
-- Learn more at https://everymac.com/systems/apple/mac_mini/mac-mini-aluminum-unibody-faq/
-- https://everymac.com/ultimate-mac-lookup/?search_keywords=A1347
+Hardware upgrades:
+- upgrading RAM to the recommeded 2x 4GB modules
+- replacing the HDD or "fusion" drive with a 2.5" SSD drive
 
 # About the unit
 In the Lab we will be using mid-2010 units with the 2.4GHz processor. Later versions of the A1347 can run later versions of MacOS and might have different ports or features.
@@ -75,9 +76,10 @@ Storage
   - File server
   - Time Machine Server (Apple's backup system is called Time Machine)
   - Caching Server
+- Web developer workstation
 - Streaming sports or movies
 - Running Proxmox
-- Runing Plex
+- Running Plex
 - More ideas: https://eshop.macsales.com/blog/76875-6-ways-you-can-use-an-old-or-refurbished-mac-mini/
 
 # Overview
@@ -86,19 +88,28 @@ Storage
 
 ## Upgrade RAM and Storage
 [Upgrade](2_Upgrade.md) - Maximize the performance of the device
-## Reload OS
-[Reload](3_Reload.md) - This step covers reloading the Mac operating system
 
-## Initial Tests
+## macOS Tasks
+### Reload macOS
+[Reload macOS](3_Reload_macOS.md) - This step covers reloading the Mac operating system
+### Benchmarks
 [Initial Tests](4_Testing.md) - Benchmark and do some initial diagnostics
-
-## Install Supported Browser
+### Install Firefox ESR
 [Installing Firefox ESR](5_Browser.md) - No major browsers support even the most recent version of macOS available for this older Mac mini. Firefox ESR does, though!
 
-## Install Linux
+## Linux Desktop Tasks
 [Installing Linux](6_Linux.md) - Installing Linux on the Mac mini
-
+### Install Ubuntu Desktop 22.04 LTS
 It's astonishingly simple to install Linux. Just insert a bootable installation USB and power on, holding the Option key (Alt on a PC keyboard). The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI, so you will need and installer with UEFI.
+### Benchmark
+### Code Editor
+### Install MAMP
+### Test a Sample App
+
+## Linux Server Tasks
+### Install Ubuntu Server 22.04 LTS
+
+## Tails Demonstration
 
 ## Proxmox
 Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
@@ -110,6 +121,9 @@ Media and streaming server
 
 ## NAS
 Use MacOS file sharing
+
+# Appendices
+[Startup Key Combinations](Appendix - Startup Key Combinations)
 
 ## Restore MacOS
 https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
