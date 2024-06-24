@@ -29,19 +29,25 @@ This site provides information on creating your own bootable USB stick with the 
 -  https://github.com/upekkha/AppleHardwareTest
 
 Steps
-1. Create a bootable USB stick
-    - Disk Utility's Erase with Format: OS X Extended and Scheme: GUID Partition Map (FIXME)
-    - Let's assume the USB stick is mounted under /Volumes/USBstick
+1. Format the USB stick
+    - Insert the USB stick
+    - Identify the disk number: `diskutil list`
+    - Example for "disk2"
+      - `diskutil eraseDisk JHFS+ USBstick GPT disk`
+    - The USB should now be mounted under `/Volumes/USBstick`
 2. Download the MacMini4,1 AHT (Apple Hardware Test)
     - Download https://download.info.apple.com/Apple_Hardware_Test/022-4706-A.dmg
-3. Copy AHT to the USB stick
-    - Mount the AHT dmg. Let's refer to the mount point as /Volumes/AHT
-    -Copy the AHT to the USB stick and flag it as bootable
+3. Double-click the DMG file to mount it
+    - `ls /Volumes`
+    - In my Lab the volume is `AHTDTwo`
+4. Copy AHT to the USB stick and flag it as bootable
 ```
-cp -r /Volumes/AHT/System /Volumes/USBstick/
+cp -r /Volumes/AHT_Disk_Two/System /Volumes/USBstick/
 sudo bless --folder /Volumes/USBstick/ --file /Volumes/USBstick/System/Library/CoreServices/.diagnostics/diags.efi --label AHT
 ```
-4. Option-book with the USB stick installed and select the AHT
+5. Option-boot with the USB stick inserted and select the AHT
+
+These instructions make the USB stick show "EFI Boot" when I did an option-boot. But selecting it just booting the mini as normal.
 
 ## Alternative Hardware Diagnostics
 Since the mini has an Intel processory and can boot from EFI images, you can boot from other hardward diagnostics tools.
