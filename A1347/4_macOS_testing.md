@@ -8,7 +8,7 @@ In this step, we will be configuring the mini to be a simple web development sys
 3. Connect to WiFi https://support.apple.com/guide/mac-help/connect-your-mac-to-the-internet-using-wi-fi-mchlp1180/mac
 
 
-## Load Maintenannce Tools
+## Load Maintenance Tools
 For those new to Mac, here are some tools for benchmarking, testing, and maintenance.
 
 *See also https://www.makeuseof.com/tag/free-mac-tools-fix-problems/*
