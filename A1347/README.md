@@ -125,5 +125,5 @@ Media and streaming server
 Use MacOS file sharing
 
 # Appendices
-[Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
-[Restore MacOS](Appendix-Restore_MacOS.md) - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
+- [Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
+- [Restore MacOS](Appendix-Restore_MacOS.md) - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
