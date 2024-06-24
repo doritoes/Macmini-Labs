@@ -99,32 +99,24 @@ Cons:
 ## Upgrade RAM and Storage
 [Upgrade](2_Upgrade.md) - Maximize the performance of the device
 
-## macOS Tasks
-### Reload macOS
-[Reload macOS](3_Reload_macOS.md) - This step covers reloading the Mac operating system
-### Benchmarks
-[Initial Tests](4_Testing.md) - Benchmark and do some initial diagnostics
-### Install Firefox ESR
-[Installing Firefox ESR](5_Browser.md) - No major browsers support even the most recent version of macOS available for this older Mac mini. Firefox ESR does, though!
+## Reload macOS
+[Reload macOS](3_Reload_macOS.md) covers reloading the Mac operating system to the macOS High Sierra
 
-## Linux Desktop Tasks
-[Installing Linux](6_Linux.md) - Installing Linux on the Mac mini
-### Install Ubuntu Desktop 22.04 LTS
-It's astonishingly simple to install Linux. Just insert a bootable installation USB and power on, holding the Option key (Alt on a PC keyboard). The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI, so you will need and installer with UEFI.
-### Benchmark
-### Code Editor
-### Install MAMP
-### Test a Sample App
+## macOS Testing
+[macOS Testing](4_macOS_testing.md) will take you through a web app developer workstation setup
 
-## Linux Server Tasks
-### Install Ubuntu Server 22.04 LTS
+
+## Linux Desktop Testing
+[Installing Linux Desktop](5_Linux_desktop_testing.md)
+
+## Linux Server Testing
+[Installing Linux Server](6_Linux_server_testing.md)
 
 ## Tails Demonstration
+[Booting from Tails](7_Tails_testing.md)
 
 ## Proxmox
 Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
-
-The Mini doesn't have a classic PC style BIOS because it is not built on legacy PC designs. It runs Apple's implementation of EFI. You can get into the boot picker by holding Option(Alt on a PC keyboard) at power on. If you want to change setting you do it through EFI variables, or install a compatible EFI boot manager.
 
 ## Plex
 Media and streaming server
@@ -133,7 +125,5 @@ Media and streaming server
 Use MacOS file sharing
 
 # Appendices
-[Startup Key Combinations](Appendix - Startup Key Combinations)
-
-## Restore MacOS
-https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
+[Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
+[Restore MacOS](Appendix-Restore_MacOS.md) - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
