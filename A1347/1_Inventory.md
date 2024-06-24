@@ -20,6 +20,7 @@ A non-compatible RAM module will cause the device to fail to boot
 To physically inspect the RAM, remove the bottom panel by rotating it. Replace the panel when done.
 
 ## Diagnostics
+### Apple Diagnostics
 Running hardware diagnostics is meant to be simple and easy: press and hold the "D" key when powering on.
 - Apple Diagnostics - https://support.apple.com/en-us/102550
 
@@ -49,7 +50,13 @@ sudo bless --folder /Volumes/USBstick/ --file /Volumes/USBstick/System/Library/C
 
 These instructions make the USB stick show "EFI Boot" when I did an option-boot. But selecting it just booting the mini as normal.
 
-## Alternative Hardware Diagnostics
+### RAM test
+Boot from a MemTest86 USB stick
+  - Download the image https://www.memtest86.com/download.htm
+  - Create a bootable USB using Etcher
+  - Option-boot the Mac
+
+### Alternative Hardware Diagnostics
 Since the mini has an Intel processory and can boot from EFI images, you can boot from other hardward diagnostics tools.
 
 One simple way is to boot from a Linux Live image and look at the system.
