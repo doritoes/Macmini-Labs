@@ -92,7 +92,8 @@ MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
 - Click Start
 - Point your browser to http://127.0.0.1:8888
   
-### Dokuwiki
+## Dokuwiki
+Dokuwiki is an open source wiki that is a good demonstration.
 - https://download.dokuwiki.org/
   - optionally remove unwanted language packages
   - optionally add Upgrade Plugin
@@ -112,7 +113,29 @@ MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
   - delete the .tgz file from the htdocs folder
 - Access the wiki at http://127.0.0.1:8888/dokuwiki/
 
-### Test App
+## Install Homebrew
+Let's install the "missing package manager" for macOS - https://brew.sh/
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+## Install git via Homebrew
+Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
+```
+brew update
+brew install git
+```
+
+## Install Ansible via Homebrew
+Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
+
+```
+brew update
+brew install ansible
+ansible --version
+```
+
+## Test MAMP App
 - https://github.com/qyjohn/simple-lamp
 - Open Terminal
 - Change directory to the htdocs directory
@@ -134,23 +157,3 @@ mysql> quit
 mysql -u username -p simple_lamp < simple_lamp.sql
 ```
 - Browse to http://127.0.0.1:8888/
-
-## Install Homebrew
-Let's install the "missing package manager" for macOS - https://brew.sh/
-
-### Install Option 1
-```
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-#### Install Option 2
-- Download the .pkg file from https://github.com/Homebrew/brew/releases/latest
-- Open the .pkg file and follow the prompts
-
-## Install Ansible via Homebrew
-Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
-
-```
-brew update
-brew install ansible
-ansible --version
-```
