@@ -91,4 +91,45 @@ MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
 - Click Start
 - Point your browser to http://127.0.0.1:8888
   
-## Test a Sample App
+### Dokuwiki
+- https://download.dokuwiki.org/
+  - optionally remove unwanted language packages
+  - optionally add Upgrade Plugin
+  - Click Download
+- Open Terminal
+- Copy the downloaded .tgz file to the htdocs directory
+  - Example if your volume is named macOS
+  - `cp Downloads/docuwiki*tgz /Volumes/macOS/Applications/MAMP/htdocs`
+- Unpack the tgz file
+  - Example if your volume is named macOS
+  - `cp /Volumes/macOS/Applications/MAMP/htdocs`
+  - `tar xzvf docuwiki-[tab complete]`
+- Run the Dokuwiki installation wizard
+  - http://127.0.0.1:8888/dokuwiki/install.php
+- Clean up
+  - delete the install.php file from the dokuwiki folder
+  - delete the .tgz file from the htdocs folder
+- Access the wiki at http://127.0.0.1:8888/dokuwiki/
+
+### Test App
+- https://github.com/qyjohn/simple-lamp
+- Open Terminal
+- Change directory to the htdocs directory
+  - Example if your volume is named macOS
+  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Clone the repo
+  - https://github.com/qyjohn/simple-lamp
+  - `git clone https://github.com/qyjohn/simple-lamp`
+- Create the database
+```
+$ mysql -u root -p
+mysql> CREATE DATABASE simple_lamp;
+mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+mysql> GRANT ALL PRIVILEGES ON simple_lamp.* TO 'username'@'localhost';
+mysql> quit
+```
+- Import some data
+```
+mysql -u username -p simple_lamp < simple_lamp.sql
+```
+- Browse to http://127.0.0.1:8888/
