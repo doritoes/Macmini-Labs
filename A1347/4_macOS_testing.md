@@ -75,7 +75,7 @@ VS Code is not supported on the old OS, so here are two options that do install:
 - TextMate - https://macromates.com/ and https://github.com/textmate/textmate
   - Open the .tbz file
   - Open the new folder
-  - Drag TextKate to the applications folder
+  - Drag TextMate to the applications folder
 - Brackets https://brackets.io/
   - Click Download
   - Open the .dmg file and drag app to Applications
@@ -104,8 +104,8 @@ Dokuwiki is an open source wiki that is a good demonstration.
   - `cp Downloads/docuwiki*tgz /Volumes/macOS/Applications/MAMP/htdocs`
 - Unpack the tgz file
   - Example if your volume is named macOS
-  - `cp /Volumes/macOS/Applications/MAMP/htdocs`
-  - `tar xzvf docuwiki-[tab complete]`
+  - `cd /Volumes/macOS/Applications/MAMP/htdocs`
+  - `tar xzvf dokuwiki-[tab complete]`
 - Run the Dokuwiki installation wizard
   - http://127.0.0.1:8888/dokuwiki/install.php
 - Clean up
