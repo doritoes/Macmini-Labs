@@ -78,6 +78,7 @@ VS Code is not supported on the old OS, so here are two options that do install:
   - Drag TextKate to the applications folder
 - Brackets https://brackets.io/
   - Click Download
+  - Open the .dmg file and drag app to Applications
   - Much slower to install and load on the Lab mini
 
 ## Install MAMP Environment
@@ -133,3 +134,23 @@ mysql> quit
 mysql -u username -p simple_lamp < simple_lamp.sql
 ```
 - Browse to http://127.0.0.1:8888/
+
+## Install Homebrew
+Let's install the "missing package manager" for macOS - https://brew.sh/
+
+### Install Option 1
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+#### Install Option 2
+- Download the .pkg file from https://github.com/Homebrew/brew/releases/latest
+- Open the .pkg file and follow the prompts
+
+## Install Ansible via Homebrew
+Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
+
+```
+brew update
+brew install ansible
+ansible --version
+```
