@@ -169,6 +169,9 @@ https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 - Database: YOURLS supports either MySQL (version 5.0 or greater) or MariaDB (version 10.0 or greater) for storing link data.
 - HTTPS Support: For security reasons, we recommend hosting your YOURLS installation on a server with HTTPS support.
 
+### Lychee App
+https://github.com/electerious/Lychee
+
 ## Remote Desktop
 https://support.apple.com/guide/mac-help/allow-apple-remote-desktop-to-access-your-mac-mh11851/mac
 - From Linux: Remmina
