@@ -163,6 +163,12 @@ mysql -u username -p simple_lamp < simple_lamp.sql
 ### YOURLS App
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 
+- Web Server: YOURLS requires Apache (httpd) version 2.4 or greater, with the mod_rewrite module enabled.
+- PHP: PHP version 7.4 or greater is required for YOURLS to function correctly.
+- If you plan on utilizing the YOURLS API, make sure the PHP cURL extension is enabled.
+- Database: YOURLS supports either MySQL (version 5.0 or greater) or MariaDB (version 10.0 or greater) for storing link data.
+- HTTPS Support: For security reasons, we recommend hosting your YOURLS installation on a server with HTTPS support.
+
 ## Remote Desktop
 https://support.apple.com/guide/mac-help/allow-apple-remote-desktop-to-access-your-mac-mh11851/mac
 - From Linux: Remmina
