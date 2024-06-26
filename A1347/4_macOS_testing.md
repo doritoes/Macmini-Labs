@@ -160,6 +160,9 @@ mysql> quit
 mysql -u username -p simple_lamp < simple_lamp.sql
 ```
 
+### YOURLS App
+https://yourls.org/docs - https://github.com/YOURLS/YOURLS
+
 ## Remote Desktop
 https://support.apple.com/guide/mac-help/allow-apple-remote-desktop-to-access-your-mac-mh11851/mac
 - From Linux: Remmina
