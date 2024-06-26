@@ -1,7 +1,6 @@
 # macOS Testing
 In this step, we will be configuring the mini to be a simple web development system. This will be somewhat of a challenge as most modern software packages will not install on macOS High Sierra.
 
-
 ## First things first
 - Clean up the dock
   - drag iTunes into the Trash
@@ -14,13 +13,15 @@ In this step, we will be configuring the mini to be a simple web development sys
   - App Store
   - Check *Automatically Check* and the settings you prefer
 - Connect to WiFi https://support.apple.com/guide/mac-help/connect-your-mac-to-the-internet-using-wi-fi-mchlp1180/mac
+- Enable SSD Trim (if you have an SSD)
+  - `sudo trimforce enable`
 
 ## Install Firefox ESR
 No major browsers support macOS High Sierra any more (the latest version that runs on my lab hardward). Firefox ESR does, though!
 - Google search "install firefox mac" and/or navigate to https://www.mozilla.org/en-US/firefox/mac/
 - You will be notified that your OS version is not supported, and you will be seamlessly redirected to install the ESR edition "Firefox Extended Support Release".
 - Click Download Firefox ESR
-- Open the file in the Downlods folder (similar to "Firefox 115.12.0esr.dmg)
+- Open the file in the Downloads folder (similar to "Firefox 115.12.0esr.dmg")
 - Drag the Firefox icon to the Applications folder shortuct
 - Control-click in the Firefox window and click Eject "Firefox"
 - Optionally drag Firefox onto the Dock from the applications folder
@@ -66,7 +67,7 @@ Normally we would install Geekbench 6 from the app store. However, it won't run 
   - Easy access to customize the interface
 
 ## Install Code Editor
-VS Code is not supported on the old OS, so here are two options that do install:
+VS Code is not supported on the old OS, so here are three options that do install:
 - Sublime Text https://sublimetext.com
   - Download for Mac
   - Open the Zip file
@@ -83,13 +84,13 @@ VS Code is not supported on the old OS, so here are two options that do install:
 
 ## Install MAMP Environment
 MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
-- MAMP & MAMP PRO 6.9 (macOS 1.12+ & Intel CPU)
-- open the downloaded .pkg file
-- follow prompts
-- run MAMP application from the MAMP folder inside the Applications folder
-- note the htdocs folder, were you will place your web application
+- Click MAMP & MAMP PRO 6.9 (macOS 1.12+ & Intel CPU)
+- Open the downloaded .pkg file
+- Follow the prompts
+- Run the MAMP application from the MAMP folder inside the Applications folder
+- Note the htdocs folder, were you will place your web application
 - optionally, run MAMP PRO under a 14-day trial for a lot more handy features like changing the app location
-- Click Start
+- Click the small power icon to start the MAMP services
 - Point your browser to http://127.0.0.1:8888
   
 ## Dokuwiki
@@ -121,6 +122,8 @@ Let's install the "missing package manager" for macOS - https://brew.sh/
 
 ## Install git via Homebrew
 Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
+
+WARNING this was extremely slow to compile in my Lab environment (measured in hours not minutes)
 ```
 brew update
 brew install git
@@ -156,4 +159,10 @@ mysql> quit
 ```
 mysql -u username -p simple_lamp < simple_lamp.sql
 ```
+
+## Remote Desktop
+https://support.apple.com/guide/mac-help/allow-apple-remote-desktop-to-access-your-mac-mh11851/mac
+- From Linux: Remmina
+- From Windows; https://www.realvnc.com/en/connect/download/viewer/windows/
+- Or use a Guamamole server
 - Browse to http://127.0.0.1:8888/
