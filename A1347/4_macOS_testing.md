@@ -201,3 +201,4 @@ Notes:
 - the Micorosoft Remote Desktop app from the app store didn't work (High Sierra is too old)
   - See older version at https://www.macupdate.com/app/mac/8431/microsoft-remote-desktop/old-versions
 - the RealVNC Viewer Mac cient didn't work (High Sierra is too old)
+  - link to older versions https://mac.filehorse.com/download-vnc-viewer/old-versions/
