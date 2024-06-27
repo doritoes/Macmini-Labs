@@ -135,9 +135,11 @@ git --version
 ## Install Ansible via Homebrew
 Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
 
+In the Lab installing the prerequisite gcc failed, so I was unable to get Ansible working.
+
 ```
 brew update
-brew install ansible
+brew install gcc ansible
 ansible --version
 ```
 
@@ -175,7 +177,7 @@ https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 ### Lychee App
 https://github.com/electerious/Lychee
 
-## Remote Access and Remove Desktop
+## Remote Access and Remote Desktop
 - Click the Apple logo then System Preferences
 - Click Sharing
   - Check Rmoete Login (allows remote SSH login)
