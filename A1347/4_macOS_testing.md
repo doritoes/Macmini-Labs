@@ -202,5 +202,12 @@ Remote access clients we use in our Lab:
 Notes:
 - the Micorosoft Remote Desktop app from the app store didn't work (High Sierra is too old)
   - See older version at https://www.macupdate.com/app/mac/8431/microsoft-remote-desktop/old-versions
-- the RealVNC Viewer Mac cient didn't work (High Sierra is too old)
-  - link to older versions https://mac.filehorse.com/download-vnc-viewer/old-versions/
+  - Open the .pkg file and follow the prompts
+  - Be aware this app will try to update itself and give you NAG messages to upgrade macOS, which you can't do
+- RealVNC Viewer Mac client Support for MacOS High Sierra was removed after VNC Server 6.7.4 and VNC Viewer 6.21.406
+  - 6.21.1109 is best version available, but it does not install on our High Sierra system
+    - VNC-Viewer-6.21.1109-MacOSX-x86_64.dmg
+  - Older versions have a bad vulnerability
+    - VNC-Viewer-6.20.111-MacOSX-x86_64.dmg
+      - https://macdownload.informer.com/vncviewer/download/?ca2fb36b
+      - works in the Lab environment
