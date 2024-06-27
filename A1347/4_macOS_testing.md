@@ -129,6 +129,7 @@ WARNING this was extremely slow to compile in my Lab environment (measured in ho
 ```
 brew update
 brew install git
+git --version
 ```
 
 ## Install Ansible via Homebrew
@@ -187,7 +188,16 @@ https://github.com/electerious/Lychee
   - if connected to both wired and wireless, only the wired IP address (the one showed on the remote long screen) will work
 
 Remote access clients we use in our Lab:
-- From another Mac: Apple Remote Desktop
+- From another Mac:
+  - Open Finder, then click Go from top menu
+  - Enter the IP address as prefixed with vnc://
+  - Example: vnc://192.168.0.100
+  - Read more at https://itac.txst.edu/support/remote-desktop/mac-remote.html
 - From Linux: Remmina
 - From Windows: RealVNC Viewer - https://www.realvnc.com/en/connect/download/viewer/windows/
 - Or use a Guamamole server
+
+Notes:
+- the Micorosoft Remote Desktop app from the app store didn't work (High Sierra is too old)
+  - See older version at https://www.macupdate.com/app/mac/8431/microsoft-remote-desktop/old-versions
+- the RealVNC Viewer Mac cient didn't work (High Sierra is too old)
