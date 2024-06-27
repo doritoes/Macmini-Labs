@@ -15,6 +15,8 @@ In this step, we will be configuring the mini to be a simple web development sys
 - Connect to WiFi https://support.apple.com/guide/mac-help/connect-your-mac-to-the-internet-using-wi-fi-mchlp1180/mac
 - Enable SSD Trim (if you have an SSD)
   - `sudo trimforce enable`
+  - Accept the warning
+  - Accept the reboot
 
 ## Install Firefox ESR
 No major browsers support macOS High Sierra any more (the latest version that runs on my lab hardward). Firefox ESR does, though!
@@ -172,9 +174,20 @@ https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 ### Lychee App
 https://github.com/electerious/Lychee
 
-## Remote Desktop
-https://support.apple.com/guide/mac-help/allow-apple-remote-desktop-to-access-your-mac-mh11851/mac
+## Remote Access and Remove Desktop
+- Click the Apple logo then System Preferences
+- Click Sharing
+  - Check Rmoete Login (allows remote SSH login)
+  - Check Remote Management
+    - For our Lab purposes, check all the options
+    - Click on Remote Management then click Computer Settings
+        - Check all 3 boxes
+        - Enter VNC control password
+- Test ssh access and remote desktop
+  - if connected to both wired and wireless, only the wired IP address (the one showed on the remote long screen) will work
+
+Remote access clients we use in our Lab:
+- From another Mac: Apple Remote Desktop
 - From Linux: Remmina
-- From Windows; https://www.realvnc.com/en/connect/download/viewer/windows/
+- From Windows: RealVNC Viewer - https://www.realvnc.com/en/connect/download/viewer/windows/
 - Or use a Guamamole server
-- Browse to http://127.0.0.1:8888/
