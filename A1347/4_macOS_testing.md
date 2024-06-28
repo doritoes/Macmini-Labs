@@ -96,7 +96,7 @@ MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
 - Point your browser to http://127.0.0.1:8888
   
 ## Dokuwiki
-Dokuwiki is an open source wiki that is a good demonstration.
+Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the mySQL database
 - https://download.dokuwiki.org/
   - optionally remove unwanted language packages
   - optionally add Upgrade Plugin
@@ -154,7 +154,8 @@ brew install mysql-client
 mysql --version
 ```
 
-## Test MAMP App
+## Install LAMP Apps on MAMP
+### Simple-LAMP
 - https://github.com/qyjohn/simple-lamp
 - Open Terminal
 - Change directory to the htdocs directory
@@ -173,7 +174,7 @@ mysql --version
 - You can now access the app from another Lab system by using the IP address of the mini
   - example: http://192.168.0.100:8888/simple-lamp
 
-### YOURLS App
+### YOURLS
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 
 - Web Server: YOURLS requires Apache (httpd) version 2.4 or greater, with the mod_rewrite module enabled.
