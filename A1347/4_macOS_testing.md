@@ -176,6 +176,8 @@ mysql --version
 - It's best practice to remove the `install.php` file after isntallation to prevent overwriting the database
 
 ### YOURLS
+This is a URL shortener service app that exercises the MySQL database.
+
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 - Web Server: YOURLS requires Apache (httpd) version 2.4 or greater, with the mod_rewrite module enabled.
 - PHP: PHP version 7.4 or greater is required for YOURLS to function correctly.
@@ -198,12 +200,47 @@ Steps:
   - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
   - Edit the YOURLS_DB_USER value to `yourls` (in production you would add another user for YOURLS)
   - Edit the YOURLS_DB_PASS to `password` (see the setup.php file)
-  - Modify YOURLS_SITE to the URL you will use to access the site (e.g., http://192.168.99.100:8888/YOURLS)
-    - if you don't, you will get a hilarious error message
+  - Modify YOURLS_SITE to the URL you will use to access the site
+    - e.g., http://192.168.99.100:8888/YOURLS
+    - if you don't change this setting you will get a hilarious error message
+  - Optionally modify the default admin credentials of: username/password
 - Navigate to http://127.0.0.1:8888/YOURLS/admin
+- Click Install YOURLS
+- Click the link to the admin page
+- Log in (credentials in config.php)
+- Optionally create a web page the home directory that non-admins will see (e.g., htdocs/YOURLS/index.php)
+- Remove the uneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
 
-### Lychee App
+### Lychee
+Lychee is a photo management tool. We are going install an older version to keep things simple. The latest version is intended to be installed using npm, beyond the scope of our limited environment.
+
 https://github.com/electerious/Lychee
+
+Steps:
+- Change directory to the htdocs directory
+  - Example if your volume is named macOS
+  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Clone the repo
+  - https://github.com/electerious/Lychee
+  - `git clone https://github.com/electerious/Lychee`
+- Permissions
+  - `cd Lychee`
+  - `chmod -R 750 uploads/ data/`
+- Configure
+  - http://127.0.0.1:8888/
+  - Database host: leave blank
+  - Database Username: root
+  - Database Password: root
+    - MAMP default MySQL root password is root
+  - Click Connect
+  - Enter username and password for your new installation then click Create Login
+
+Note that if you log in and try to upload a photo, you might get the error
+- No API function specified! Please take a look at the console of your browser for further details.
+- No all images had this issue in my testing
+
+Note: the latest version of Lychee is at https://github.com/LycheeOrg/Lychee
+- You can try `brew install npm` and install it, but I was unable to test it
 
 ## Remote Access and Remote Desktop
 - Click the Apple logo then System Preferences
