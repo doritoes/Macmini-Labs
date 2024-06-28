@@ -164,19 +164,14 @@ mysql --version
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
 - Normally we would use `mysql` client to do the initial configuration. However, the mysq-client failed to build/install on High Sierra
-- Create `intall.php` file to perform the same options
-  - Create the database
-```
-$ mysql -u root -p
-mysql> CREATE DATABASE simple_lamp;
-mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-mysql> GRANT ALL PRIVILEGES ON simple_lamp.* TO 'username'@'localhost';
-mysql> quit
-```
-  - Import some data
-```
-mysql -u username -p simple_lamp < simple_lamp.sql
-```
+- Create `install.php` file to perform the same options
+  - [install.php](install.php)
+- Configure the app:
+  - http://127.0.0.1:8888/simple-lamp/install.php
+- Access the app:
+  - http://127.0.0.1:8888/simple-lamp/
+- You can now access the app from another Lab system by using the IP address of the mini
+  - example: http://192.168.0.100:8888/simple-lamp
 
 ### YOURLS App
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
@@ -193,7 +188,7 @@ https://github.com/electerious/Lychee
 ## Remote Access and Remote Desktop
 - Click the Apple logo then System Preferences
 - Click Sharing
-  - Check Rmoete Login (allows remote SSH login)
+  - Check Remote Login (allows remote SSH login)
   - Check Remote Management
     - For our Lab purposes, check all the options
     - Click on Remote Management then click Computer Settings
