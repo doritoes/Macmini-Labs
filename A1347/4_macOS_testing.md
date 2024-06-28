@@ -173,6 +173,7 @@ mysql --version
   - http://127.0.0.1:8888/simple-lamp/
 - You can now access the app from another Lab system by using the IP address of the mini
   - example: http://192.168.0.100:8888/simple-lamp
+- It's best practice to remove the `install.php` file after isntallation to prevent overwriting the database
 
 ### YOURLS
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
