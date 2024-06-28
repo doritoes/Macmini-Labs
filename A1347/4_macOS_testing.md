@@ -212,7 +212,7 @@ Steps:
 - Remove the uneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
 
 ### Lychee
-Lychee is a photo management tool. We are going install an older version to keep things simple. The latest version is intended to be installed using npm, beyond the scope of our limited environment.
+Lychee is a photo management tool. We are going install an older version to keep things simple. The latest version is intended to be installed using npm, beyond the scope of our limited environment. Attempts to 'brew install npm' failed on building the dependencies.
 
 https://github.com/electerious/Lychee
 
@@ -240,7 +240,7 @@ Note that if you log in and try to upload a photo, you might get the error
 - No all images had this issue in my testing
 
 Note: the latest version of Lychee is at https://github.com/LycheeOrg/Lychee
-- You can try `brew install npm` and install it, but I was unable to test it
+- You can try `brew install npm` and install it, but my attempts failed.
 
 ## Remote Access and Remote Desktop
 - Click the Apple logo then System Preferences
