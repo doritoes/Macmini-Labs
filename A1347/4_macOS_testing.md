@@ -177,12 +177,29 @@ mysql --version
 
 ### YOURLS
 https://yourls.org/docs - https://github.com/YOURLS/YOURLS
-
 - Web Server: YOURLS requires Apache (httpd) version 2.4 or greater, with the mod_rewrite module enabled.
 - PHP: PHP version 7.4 or greater is required for YOURLS to function correctly.
 - If you plan on utilizing the YOURLS API, make sure the PHP cURL extension is enabled.
 - Database: YOURLS supports either MySQL (version 5.0 or greater) or MariaDB (version 10.0 or greater) for storing link data.
 - HTTPS Support: For security reasons, we recommend hosting your YOURLS installation on a server with HTTPS support.
+
+Steps:
+- Change directory to the htdocs directory
+  - Example if your volume is named macOS
+  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Clone the repo
+  - https://github.com/qyjohn/simple-lamp
+  - `git clone https://github.com/YOURLS/YOURLS`
+- Create the MySQL database and user
+  - Create `setup.php` file to perform the same options
+  - [setup.php](setup.php) 
+- Create config file
+  - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
+  - Edit the YOURLS_DB_USER value to `root` (in production you would add another user for YOURLS)
+  - Edit the YOURLS_DB_PASS to `root` (the default for MAMP)
+  - Modify YOURLS_SITE to the URL you will use to access the site (e.g., http://192.168.99.100/YOURLS)
+    - if you don't, you will get a hilarious error message
+- Navigate to http://127.0.0.1/YOURLS/admin
 
 ### Lychee App
 https://github.com/electerious/Lychee
