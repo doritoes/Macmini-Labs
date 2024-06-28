@@ -191,15 +191,16 @@ Steps:
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/YOURLS/YOURLS`
 - Create the MySQL database and user
-  - Create `setup.php` file to perform the same options
-  - [setup.php](setup.php) 
+  - Create `setup.php` file in htdocs/YOURLS/setup.php
+  - [setup.php](setup.php)
+  - http://localhost:8888/YOURLS/setup.php
 - Create config file
   - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
-  - Edit the YOURLS_DB_USER value to `root` (in production you would add another user for YOURLS)
-  - Edit the YOURLS_DB_PASS to `root` (the default for MAMP)
-  - Modify YOURLS_SITE to the URL you will use to access the site (e.g., http://192.168.99.100/YOURLS)
+  - Edit the YOURLS_DB_USER value to `yourls` (in production you would add another user for YOURLS)
+  - Edit the YOURLS_DB_PASS to `password` (see the setup.php file)
+  - Modify YOURLS_SITE to the URL you will use to access the site (e.g., http://192.168.99.100:8888/YOURLS)
     - if you don't, you will get a hilarious error message
-- Navigate to http://127.0.0.1/YOURLS/admin
+- Navigate to http://127.0.0.1:8888/YOURLS/admin
 
 ### Lychee App
 https://github.com/electerious/Lychee
