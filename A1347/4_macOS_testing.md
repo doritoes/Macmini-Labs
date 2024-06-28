@@ -121,8 +121,8 @@ Let's install the "missing package manager" for macOS - https://brew.sh/
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-## Install git via Homebrew
+## Install packages with Homebrew
+### Install git
 Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
 
 WARNING this was extremely slow to compile in my Lab environment (measured in hours not minutes)
@@ -132,7 +132,7 @@ brew install git
 git --version
 ```
 
-## Install Ansible via Homebrew
+### Install Ansible
 Read more at https://www.ansibletutorials.com/install-ansible-mac-os-x.html#section-install
 
 In the Lab installing the prerequisite gcc failed, so I was unable to get Ansible working.
@@ -141,6 +141,17 @@ In the Lab installing the prerequisite gcc failed, so I was unable to get Ansibl
 brew update
 brew install gcc ansible
 ansible --version
+```
+
+### Install mysql-client
+Read more at https://stackoverflow.com/questions/30990488/how-do-i-install-command-line-mysql-client-on-mac
+
+In the Lab installing mysql-client gave a javac requires SDK warning, then fails.
+
+```
+brew update
+brew install mysql-client
+mysql --version
 ```
 
 ## Test MAMP App
@@ -152,7 +163,9 @@ ansible --version
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
-- Create the database
+- Normally we would use `mysql` client to do the initial configuration. However, the mysq-client failed to build/install on High Sierra
+- Create `intall.php` file to perform the same options
+  - Create the database
 ```
 $ mysql -u root -p
 mysql> CREATE DATABASE simple_lamp;
@@ -160,7 +173,7 @@ mysql> CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
 mysql> GRANT ALL PRIVILEGES ON simple_lamp.* TO 'username'@'localhost';
 mysql> quit
 ```
-- Import some data
+  - Import some data
 ```
 mysql -u username -p simple_lamp < simple_lamp.sql
 ```
