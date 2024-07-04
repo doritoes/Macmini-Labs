@@ -14,7 +14,7 @@ It's very easy to install Ubuntu Server on the mini. I actually used the very sa
 
 ## Install from Bootable USB Stick
 
-## Load Maintenannce Tools
+## Load Maintenance Tools
 
 ### Benchmarks
 
