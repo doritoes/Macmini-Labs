@@ -2,7 +2,7 @@
 macOS has a few ways to restore a Mac to factory defaults. However, these may not work for your mini.
 - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
 
-Issus encounted:
+Issues encountered:
   - the mid-2010 mini only supports macOS High Sierra
   - the unit came with OS X, so restore to that image doesn't help me
   - identified that Internet Recovery no longer works because the embedded certificate used has expired
@@ -20,7 +20,7 @@ This process requires creating a bootable USB from another MacOS High Sierra sys
 Overview:
 1. Option-boot to the installation USB stick
 2. Use Disk Utility to erase the drive
-3. Return to the menu and insstall macOS
+3. Return to the menu and install macOS
 
 Steps:
 - power off the Mac
@@ -33,7 +33,7 @@ Steps:
     - Name: Macintosh HD
     - Format: Mac OS Extended (Journaled), as recommended by Disk Utility
     - Click Erase
-  - When done, quit Disk Utilty and return to the utilities window in Recovery
+  - When done, quit Disk Utility and return to the utilities window in Recovery
   - Select Reinstall macOS in the utilities window
     - click Continue and follow the onscreen instructions
     - for Lab use, skip configuring an Apple ID/login   
