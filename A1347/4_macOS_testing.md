@@ -41,7 +41,7 @@ Normally we would install Geekbench 6 from the app store. However, it won't run 
 
 ### Diagnostics
 - Open Disk Utility and click First Aid to check the integrity of the file system
-  - will will be prompted to run and scan the booot disk
+  - will will be prompted to run and scan the boot disk
   - run First Aid on the hidden Container which can be revealed within Disk Utility by clicking on "View" within Disk Utility and selecting "Show All Devices"
   - Even if First Aid shows everything is "Ok", click "Show Details" and look for any unfixed errors or warnings
 - Install Etrecheck https://www.etrecheck.com/en/index.html
@@ -53,7 +53,7 @@ Normally we would install Geekbench 6 from the app store. However, it won't run 
 
 ### Maintenance
 - Install Onyx https://www.titanium-software.fr/en/onyx.html
-  - Download and install the version for your macOS verson (all the way back to OSX Jaguar!)
+  - Download and install the version for your macOS version (all the way back to OSX Jaguar!)
     - Click Download
     - Open the OnyX.dmg file
   - Drag OnyX to the Applications folder link
@@ -63,7 +63,7 @@ Normally we would install Geekbench 6 from the app store. However, it won't run 
 - Install OmniDiskSweeper https://www.omnigroup.com/more
   - Download the version matching your macOS (e.g., 10.13)
   - Open the .dmg file and drag to the Applications folder link
-  - Quickly find large, unwanted files and sweep them tinto the trash
+  - Quickly find large, unwanted files and sweep them into the trash
 - TinkerTool 6 - https://www.bresink.com/osx/0TinkerTool6/download.php
   - Download the .dmg file, open it, drag the app to Applications
   - Easy access to customize the interface
@@ -96,10 +96,10 @@ MAMP = Mac Apache MySQL PHP - https://www.mamp.info/en/downloads/
 - Point your browser to http://127.0.0.1:8888
   
 ## Dokuwiki
-Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the mySQL database
+Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the MySQL database
 - https://download.dokuwiki.org/
   - optionally remove unwanted language packages
-  - optionally add Upgrade Plugin
+  - optionally add Upgrade Plug-In
   - Click Download
 - Open Terminal
 - Copy the downloaded .tgz file to the htdocs directory
@@ -172,7 +172,7 @@ brew install --cask docker
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
-- Normally we would use `mysql` client to do the initial configuration. However, the mysq-client failed to build/install on High Sierra
+- Normally we would use `mysql` client to do the initial configuration. However, the mysql-client failed to build/install on High Sierra
 - Create `install.php` file to perform the same options
   - [install.php](install.php)
 - Configure the app:
@@ -181,7 +181,7 @@ brew install --cask docker
   - http://127.0.0.1:8888/simple-lamp/
 - You can now access the app from another Lab system by using the IP address of the mini
   - example: http://192.168.0.100:8888/simple-lamp
-- It's best practice to remove the `install.php` file after isntallation to prevent overwriting the database
+- It's best practice to remove the `install.php` file after installation to prevent overwriting the database
 
 ### YOURLS
 This is a URL shortener service app that exercises the MySQL database.
@@ -217,7 +217,7 @@ Steps:
 - Click the link to the admin page
 - Log in (credentials in config.php)
 - Optionally create a web page the home directory that non-admins will see (e.g., htdocs/YOURLS/index.php)
-- Remove the uneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
+- Remove the unneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
 
 ### Lychee
 Lychee is a photo management tool. We are going install an older version to keep things simple. The latest version is intended to be installed using npm, beyond the scope of our limited environment. Attempts to 'brew install npm' failed on building the dependencies.
@@ -270,10 +270,10 @@ Remote access clients we use in our Lab:
   - Read more at https://itac.txst.edu/support/remote-desktop/mac-remote.html
 - From Linux: Remmina
 - From Windows: RealVNC Viewer - https://www.realvnc.com/en/connect/download/viewer/windows/
-- Or use a Guamamole server
+- Or use a Guacamole server
 
 Notes:
-- the Micorosoft Remote Desktop app from the app store didn't work (High Sierra is too old)
+- the Microsoft Remote Desktop app from the app store didn't work (High Sierra is too old)
   - See older version at https://www.macupdate.com/app/mac/8431/microsoft-remote-desktop/old-versions
   - Open the .pkg file and follow the prompts
   - Be aware this app will try to update itself and give you NAG messages to upgrade macOS, which you can't do
