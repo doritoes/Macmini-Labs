@@ -19,12 +19,12 @@ In this step, we will be configuring the mini to be a simple web development sys
   - Accept the reboot
 
 ## Install Firefox ESR
-No major browsers support macOS High Sierra any more (the latest version that runs on my lab hardward). Firefox ESR does, though!
+No major browsers support macOS High Sierra any more (the latest version that runs on my lab hardware). Firefox ESR does, though!
 - Google search "install firefox mac" and/or navigate to https://www.mozilla.org/en-US/firefox/mac/
 - You will be notified that your OS version is not supported, and you will be seamlessly redirected to install the ESR edition "Firefox Extended Support Release".
 - Click Download Firefox ESR
 - Open the file in the Downloads folder (similar to "Firefox 115.12.0esr.dmg")
-- Drag the Firefox icon to the Applications folder shortuct
+- Drag the Firefox icon to the Applications folder shortcut
 - Control-click in the Firefox window and click Eject "Firefox"
 - Optionally drag Firefox onto the Dock from the applications folder
 - See more information at https://support.mozilla.org/en-US/kb/how-download-and-install-firefox-mac
