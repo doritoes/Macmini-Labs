@@ -71,7 +71,7 @@ See the tutorial https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
     - see https://askubuntu.com/questions/1411504/connect-when-remote-desktop-is-on-login-screen-or-screen-locked-without-autolog
     - there are workarounds
 
-## Load Maintenannce Tools
+## Load Maintenance Tools
 References:
 - https://www.howtoforge.com/tutorial/how-to-maintain-a-clean-ubuntu/
 
@@ -100,14 +100,14 @@ Cleanup and maintenance tools for Ubuntu
   - https://www.bleachbit.org/download/linux
   - download the .deb package and open it with... INSTALLER?
 - Stacer
-  - open source system optimizer and appliaction monitor
+  - open source system optimizer and application monitor
   - https://oguzhaninan.github.io/Stacer-Web/
   - `sudo add-apt-repository ppa:oguzhaninan/stacer`
   - `sudo apt-get update && sudo apt-get install stacer`
 - GNOME Tweaks Tool
   - Exposes more settings to customize your interface, beyond Tinker on Mac
   - https://itsfoss.com/gnome-tweak-tool/
-  - Tweaks has "Janitor" gives context and helps you clean wuth confidence
+  - Tweaks has "Janitor" gives context and helps you clean with confidence
   - check if it's installed: run `gnome-tweaks`
   - `sudo apt update`
   - `sudo apt-add-repository universe`
@@ -115,7 +115,7 @@ Cleanup and maintenance tools for Ubuntu
   - Search for tweaks or run command `gnome-tweaks`
 
 Other tips for a clean system:
-- clear APT cacche
+- clear APT cache
   - sudo apt clean
   - sudo apt autoclean
   - sudo apt autoremove
@@ -143,7 +143,7 @@ See https://openbenchmarking.org/ for more benchmarking information and learn ab
   - Available in the software center
   - https://github.com/hardinfo2/hardinfo2
 - hw-probe
-  - create a snapshot of your computer's hardware state and logs; checks operability of devices and returns a url to view the probe of the computer; suggets proper Linux kernel verion for devices missing a driver
+  - create a snapshot of your computer's hardware state and logs; checks operability of devices and returns a url to view the probe of the computer; suggests proper Linux kernel version for devices missing a driver
   - https://github.com/linuxhw/hw-probe
   - there are a variety of ways to run a probe
 
@@ -180,10 +180,10 @@ LAMP = Linux Apache MySQL PHP
       - credentials are in the docker-compose.yml file
 
 ## Dokuwiki
-Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the mySQL database
+Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the MySQL database
 - https://download.dokuwiki.org/
   - optionally remove unwanted language packages
-  - optionally add Upgrade Plugin
+  - optionally add Upgrade Plug-In
   - Click Download
 - Open Terminal
 - Copy the downloaded .tgz file to the htdocs directory
@@ -210,7 +210,7 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
-- Normally we would use `mysql` client to do the initial configuration. However, the mysq-client failed to build/install on High Sierra
+- Normally we would use `mysql` client to do the initial configuration. However, the mysql-client failed to build/install on High Sierra
 - Create `install.php` file to perform the same options
   - [install.php](install.php)
 - Configure the app:
@@ -219,7 +219,7 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
   - http://127.0.0.1:8888/simple-lamp/
 - You can now access the app from another Lab system by using the IP address of the mini
   - example: http://192.168.0.100:8888/simple-lamp
-- It's best practice to remove the `install.php` file after isntallation to prevent overwriting the database
+- It's best practice to remove the `install.php` file after installation to prevent overwriting the database
 
 ### YOURLS
 This is a URL shortener service app that exercises the MySQL database.
@@ -255,7 +255,7 @@ Steps:
 - Click the link to the admin page
 - Log in (credentials in config.php)
 - Optionally create a web page the home directory that non-admins will see (e.g., htdocs/YOURLS/index.php)
-- Remove the uneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
+- Remove the unneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
 
 ### Lychee
 Lychee is a photo management tool.
