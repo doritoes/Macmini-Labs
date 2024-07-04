@@ -65,4 +65,4 @@ One simple way is to boot from a Linux Live image and look at the system.
 Troubleshoot boot failure:
 - https://www.macworld.com/article/672001/command-r-not-working-how-to-reinstall-macos-if-recovery-wont-work.html
 
-If you determine you need to re-install MacOS, you may skip ahead to the [Appendix - Create Recovery USB Stick](Appendix - Create Recovery USB Stick)
+If you determine you need to re-install MacOS, you may skip ahead to the [Appendix - Create Recovery USB Stick](Appendix-Create_Recovery_USB_Stick.md)
