@@ -8,7 +8,7 @@ The Mac mini A1347 is a series of older models with some interesting features. I
 You can find a lot of Mac mini A1347 computers for sale on eBay. There are a number of varieties available. Be mindful that a number are sold "as-is" and "for parts only".
 
 Hardware upgrades:
-- upgrading RAM to the recommeded 2x 4GB modules
+- upgrading RAM to the recommended 2x 4GB modules
 - replacing the HDD or "fusion" drive with a 2.5" SSD drive
 
 # About the unit
@@ -38,7 +38,7 @@ Peripheral connections
 - SD card slot
 
 Graphics and video support
-- NVIDIA GeForce 320M graphics processor with 256MB of DDR3 SDRAM shared with main memory4
+- NVIDIA GeForce 320M graphics processor with 256MB of DDR3 SDRAM shared with main memory
 - Mini DisplayPort with support for up to 2560-by-1600 resolution
 - HDMI port with support for up to 1920-by-1200 resolution
 - DVI output using HDMI to DVI Adapter (included)
@@ -46,7 +46,7 @@ Graphics and video support
 - Support for extended desktop and video mirroring across both ports
 
 Communications
-- AirPort Extreme 802.11n Wi-Fi wireless networking5; IEEE 802.11a/b/g compatible
+- AirPort Extreme 802.11n Wi-Fi wireless networking; IEEE 802.11a/b/g compatible
 - Bluetooth 2.1 + EDR (Enhanced Data Rate) wireless technology
 - 10/100/1000BASE-T Ethernet (RJ-45) interface with support for jumbo frames
 
@@ -57,7 +57,7 @@ Audio
 - Support for Apple iPhone headset with microphone
 
 Storage
-- 320GB or 500GB Serial ATA hard disk drive6
+- 320GB or 500GB Serial ATA hard disk drive
 - 8x slot-loading SuperDrive (DVD±R DL/DVD±RW/CD-RW)
 - Maximum read: 8x DVD-R, DVD+R, DVD-ROM, DVD-ROM (double layer DVD-9), DVD-R DL (double layer), DVD+R DL (double layer), DVD-RW, and DVD+RW; 24x CD
 - Maximum write: 8x DVD-R, DVD+R; 6x DVD-R DL (double layer), DVD+R DL (double layer), DVD-RW; 8x DVD+RW; 24x CD-R; 24x CD-RW
@@ -70,7 +70,7 @@ Pros:
 - technically supports up to 16GB RAM (but caveats apply)
 Cons:
 - no recent and supported macOS versions run on the oldest models
-  - limited to very old OS macos High Sierra 10.13 (later A1347 models may support later versions)
+  - limited to very old OS macOS High Sierra 10.13 (later A1347 models may support later versions)
   - majority of modern apps don't run on this version (Microsoft Office, Browsers, etc)
   - limited to two 4GB RAM sticks (total 8GB) unless specific conditions are met
 
