@@ -267,11 +267,6 @@ https://lycheeorg.github.io/docs/installation.html
 ## Learn More
 ### Finding the IP address of mini1
 https://help.ubuntu.com/stable/ubuntu-help/net-findip.html.en
-### Remote access to mini1
-- Remote Desktop and VNC - https://www.youtube.com/watch?v=m5U1PgqfGiA
-- https://linuxize.com/post/how-to-enable-ssh-on-ubuntu-20-04/
-- https://www.itpro.com/mobile/remote-access/368102/how-to-remote-desktop-into-ubuntu
-  - `sudo apt update && sudo apt install openssh-server -y`
 ### Remmina Remote Desktop client
 Remmina comes pre-installed on Ubuntu Desktop. It is handy way to connect to your other Lab systems
 - RDP to Windows machines
