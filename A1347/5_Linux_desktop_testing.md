@@ -163,9 +163,104 @@ LAMP = Linux Apache MySQL PHP
   - https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
 - Use a Docker image
   - https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
-  - [docker-compose.yml](docker-compose.yml)
+  - Install docker if needed
+    - if you qualify for Docker Desktop (beware the licensing changes!): https://docs.docker.com/desktop/install/ubuntu/
+    - otherwise https://gcore.com/learning/how-to-install-docker-ubuntu/
+  - Create a project directory
+    - `mkdir lamp-docker && cd lamp-docker`
+  - Create the file [docker-compose.yml](docker-compose.yml)
+  - Create the html directory and put your web application or HTML files inside it
+    - `mkdir html`
+    - If you don't have any files handy, put a copy of [index.php](index.php) there; it will display the output of phpinfo()
+  - Build and run the containers
+    - `docker-compose up -d`
+  - Test access:
+    - Web site: http://localhost
+    - PHPMyAdmin: http://localhost:8080
+      - credentials are in the docker-compose.yml file
 
-## Test a Sample App
+## Dokuwiki
+Dokuwiki is an open source wiki that is a good demonstration. However, it does not use the mySQL database
+- https://download.dokuwiki.org/
+  - optionally remove unwanted language packages
+  - optionally add Upgrade Plugin
+  - Click Download
+- Open Terminal
+- Copy the downloaded .tgz file to the htdocs directory
+  - Example if your volume is named macOS
+  - `cp Downloads/docuwiki*tgz _________________`
+- Unpack the tgz file
+  - Example if your volume is named macOS
+  - `cd ______________________`
+  - `tar xzvf dokuwiki-[tab complete]`
+- Run the Dokuwiki installation wizard
+  - http://127.0.0.1:8888/dokuwiki/install.php
+- Clean up
+  - delete the install.php file from the dokuwiki folder
+  - delete the .tgz file from the htdocs folder
+- Access the wiki at http://127.0.0.1:8888/dokuwiki/
+
+## Install LAMP Apps
+### Simple-LAMP
+- https://github.com/qyjohn/simple-lamp
+- Open Terminal
+- Change directory to the htdocs directory
+  - Example if your volume is named macOS
+  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Clone the repo
+  - https://github.com/qyjohn/simple-lamp
+  - `git clone https://github.com/qyjohn/simple-lamp`
+- Normally we would use `mysql` client to do the initial configuration. However, the mysq-client failed to build/install on High Sierra
+- Create `install.php` file to perform the same options
+  - [install.php](install.php)
+- Configure the app:
+  - http://127.0.0.1:8888/simple-lamp/install.php
+- Access the app:
+  - http://127.0.0.1:8888/simple-lamp/
+- You can now access the app from another Lab system by using the IP address of the mini
+  - example: http://192.168.0.100:8888/simple-lamp
+- It's best practice to remove the `install.php` file after isntallation to prevent overwriting the database
+
+### YOURLS
+This is a URL shortener service app that exercises the MySQL database.
+
+https://yourls.org/docs - https://github.com/YOURLS/YOURLS
+- Web Server: YOURLS requires Apache (httpd) version 2.4 or greater, with the mod_rewrite module enabled.
+- PHP: PHP version 7.4 or greater is required for YOURLS to function correctly.
+- If you plan on utilizing the YOURLS API, make sure the PHP cURL extension is enabled.
+- Database: YOURLS supports either MySQL (version 5.0 or greater) or MariaDB (version 10.0 or greater) for storing link data.
+- HTTPS Support: For security reasons, we recommend hosting your YOURLS installation on a server with HTTPS support.
+
+Steps:
+- Change directory to the htdocs directory
+  - Example if your volume is named macOS
+  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Clone the repo
+  - https://github.com/qyjohn/simple-lamp
+  - `git clone https://github.com/YOURLS/YOURLS`
+- Create the MySQL database and user
+  - Create `setup.php` file in htdocs/YOURLS/setup.php
+  - [setup.php](setup.php)
+  - http://localhost:8888/YOURLS/setup.php
+- Create config file
+  - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
+  - Edit the YOURLS_DB_USER value to `yourls` (in production you would add another user for YOURLS)
+  - Edit the YOURLS_DB_PASS to `password` (see the setup.php file)
+  - Modify YOURLS_SITE to the URL you will use to access the site
+    - e.g., http://192.168.99.100:8888/YOURLS
+    - if you don't change this setting you will get a hilarious error message
+  - Optionally modify the default admin credentials of: username/password
+- Navigate to http://127.0.0.1:8888/YOURLS/admin
+- Click Install YOURLS
+- Click the link to the admin page
+- Log in (credentials in config.php)
+- Optionally create a web page the home directory that non-admins will see (e.g., htdocs/YOURLS/index.php)
+- Remove the uneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
+
+### Lychee
+Lychee is a photo management tool.
+
+https://lycheeorg.github.io/docs/installation.html
 
 
 
