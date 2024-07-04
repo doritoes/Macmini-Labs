@@ -12,7 +12,7 @@ It's very easy to install Ubuntu Desktop on the mini. I actually used the very s
 
 *See more comments at https://medium.com/@woodywang2013/linux-on-an-old-mac-mini-f8cb63b7657f*
 
-IMPORTANT Lab testing ran into a few scenarios where after first boot the main graphics panne was corrupted with RAM artifacts and ghosting. Installing 3rd party drivers during setup was the most common cause. A package update and reboot solved the issue in all cases.
+IMPORTANT Lab testing ran into a few scenarios where after first boot the main graphics pane was corrupted with RAM artifacts and ghosting. Installing 3rd party drivers during setup was the most common cause. A package update and reboot solved the issue in all cases.
 
 ## Install from Bootable USB Stick
 See the tutorial https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
