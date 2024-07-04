@@ -154,6 +154,14 @@ brew install mysql-client
 mysql --version
 ```
 
+### Install docker
+Docker is not supposed on macOS older than Catalina.
+
+```
+brew update
+brew install --cask docker
+```
+
 ## Install LAMP Apps on MAMP
 ### Simple-LAMP
 - https://github.com/qyjohn/simple-lamp
