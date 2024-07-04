@@ -57,7 +57,7 @@ Boot from a MemTest86 USB stick
   - Option-boot the Mac
 
 ### Alternative Hardware Diagnostics
-Since the mini has an Intel processory and can boot from EFI images, you can boot from other hardward diagnostics tools.
+Since the mini has an Intel processor and can boot from EFI images, you can boot from other hardware diagnostics tools.
 
 One simple way is to boot from a Linux Live image and look at the system.
 
