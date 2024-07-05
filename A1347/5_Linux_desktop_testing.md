@@ -54,9 +54,12 @@ See the tutorial https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
 
 💡 You cannot SSH to mini1 at this point.
 
+## Update Pacakges
+- `sudo apt update && sudo apt upgrade -y`
+
 ## Allow Remote Access
 - Allow ssh
-  - `sudo apt update && sudo apt install openssh-server -y`
+  - `sudo apt update && sudo apt install -y openssh-server`
 - Allow remote desktop
   - See https://askubuntu.com/questions/1482111/remote-desktop-ubuntu-22-04-lts
   - Settings > Sharing
@@ -78,65 +81,97 @@ References:
 Cleanup and maintenance tools for Ubuntu
 - ubuntu-cleaner
   - designed to clean up your Ubuntu system
-  - `sudo update && sudo apt install software-properties-common`
-  - `sudo add-apt-repository ppa:gerardpuig/ppa`
-  - `sudo apt update && sudo apt install ubuntu-cleaner`
-  - easy to remove after you are done cleaning
-    - `sudo apt remove ubuntu-cleaner && sudo apt autoremove`
+  - Install
+    - `sudo update && sudo apt install -y software-properties-common`
+    - `sudo add-apt-repository ppa:gerardpuig/ppa`
+    - `sudo apt update && sudo apt install -y ubuntu-cleaner`
+  - Run
+    - Run Ununtu Cleaner from launcher
+  - Easy to remove after using: `sudo apt remove ubuntu-cleaner && sudo apt autoremove`
+  - Lab testing had "abnormal ends" trying Apps and Personal. System worked fine.
 - ucaresystem
-  - complete update and cleaning tool
-  - automates the manual cleanup steps
+  - complete update and cleaning tool; automates the manual cleanup steps
   - Install
     - `sudo add-apt-repository ppa:utappia/stable`
-    - `sudo apt dupate && sudo install ucaresystem-core`
+    - `sudo apt update && sudo install -y ucaresystem-core`
   - Run
-    - `sudo ucasesystem-core`
-- GtkOrphan
-  - scans for orphaned packages upon launch
-  - `sudo apt update && sudo apt instlal gtkorphan`
+    - run uCareSystem from launcher
+    - `sudo ucaresystem-core`
 - BleachBit
-  - similar to CCleaner
-  - deeper clean that allows cleanup junk files like history, cache, temporary files, crash reports, etc.
-  - https://www.bleachbit.org/download/linux
-  - download the .deb package and open it with... INSTALLER?
+  - similar to CCleaner; deeper clean that allows cleanup junk files like history, cache, temporary files, crash reports, etc. Erases free disk space.
+  - Install
+    - https://www.bleachbit.org/download/linux
+    - download the .deb package and open it with Software Install
+  - Run
+    - There are two variants to run from the launcher, one "as Administrator"
+- localepurge
+  - Remove unneeded locale/localization packages and prevent installation of uneed locales in future
+  - Install
+    - `sudo apt install -y localepurge`
+    - Follow the prompts
+  - Run
+    - After the initial configuration, operates in the background
+- GNOME Tweaks Tool
+  - Exposes more settings to customize your interface, like Tinker on Mac
+  - https://itsfoss.com/gnome-tweak-tool/
+  - Tweaks has "Janitor" gives context and helps you clean with confidence
+  - Install
+    - check if it's installed: run `gnome-tweaks`
+    - `sudo apt update`
+    - `sudo apt-add-repository universe`
+    - `sudo apt install -y gnome-tweaks`
+  - Run
+    -  run Tweaks from launcher
+    - `gnome-tweaks`
 - Stacer
+  - LAB FAIL
   - open source system optimizer and application monitor
   - https://oguzhaninan.github.io/Stacer-Web/
   - `sudo add-apt-repository ppa:oguzhaninan/stacer`
   - `sudo apt-get update && sudo apt-get install stacer`
-- GNOME Tweaks Tool
-  - Exposes more settings to customize your interface, beyond Tinker on Mac
-  - https://itsfoss.com/gnome-tweak-tool/
-  - Tweaks has "Janitor" gives context and helps you clean with confidence
-  - check if it's installed: run `gnome-tweaks`
-  - `sudo apt update`
-  - `sudo apt-add-repository universe`
-  - `sudo apt install gnome-tweaks`
-  - Search for tweaks or run command `gnome-tweaks`
+- GtkOrphan
+  - LAB FAIL
+  - scans for orphaned packages upon launch
+  - `sudo apt update && sudo apt instal gtkorphan`
+
 
 Other tips for a clean system:
+- avoid complication from source
+- remove older kernels you don't need
 - clear APT cache
   - sudo apt clean
   - sudo apt autoclean
   - sudo apt autoremove
-- remove unneeded locale/localization packages
-  - sudo apt install localepurge
-- remove older kernels you don't need
-- avoid complication from source
 
 ### Benchmarks
 See https://openbenchmarking.org/ for more benchmarking information and learn about the Phoronix Test Suite
 - sysbench
-  - `sudo apt update && sudo apt install sysbench`
-  - `sysbench cpu run`
-    - single-threaded CPU benchmark
-    - multi-threaded: `sysbench --threads=16 cpu run`
+  - Install
+    - `sudo apt update && sudo apt install sysbench`
+  - Run
+    - `sysbench cpu run`
+      - single-threaded CPU benchmark
+      - multi-threaded: `sysbench --threads=16 cpu run`
+    - See also: memory, threads, fileio, and mutex
 - stress-ng
-  - `sudo udpate && sudo apt install stress-ng`
-- 7z (yes 7-zip has build-in benchmark tool)
-  - `sudo update && sudo install p7zip-full`
-  - single threaded: `7z b -mmt1`
-  - multi-thread: `7z b`
+  - Install
+    - `sudo udpate && sudo apt install -y stress-ng`
+  - Run
+    - CPU
+      - `uptime && stress-ng --cpu -2 --timeout 60s --metrics-brief && uptime`
+    - I/O for temporary files on disk 2
+      - `stress-ng --disk 1 --timeout 60s --metrics-brief`
+    - Memory
+      - `stress-ng --vm 2 --vm-bytes 1G --timeout 60s`
+    - Multiple: 60 seconds with 4 cpu stressors, 2 io stressors and 1 vm stressor using 1GB of virtual memory
+      - `stress-ng --cpu 4 --io 2 --vm 1 --vm-bytes 1G --timeout 60s --metrics-brief`
+  - Read more: https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/
+- 7z (yes 7-zip has built-in benchmark tool)
+  - Install
+    - `sudo update && sudo install -y p7zip-full`
+  - Run
+    - single threaded: `7z b -mmt1`
+    - multi-thread: `7z b`
 
 ### Diagnostics
 - System Profiler and Benchmark (aka hardinfo)
