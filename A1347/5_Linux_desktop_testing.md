@@ -124,16 +124,18 @@ Cleanup and maintenance tools for Ubuntu
     -  run Tweaks from launcher
     - `gnome-tweaks`
 - Stacer
-  - LAB FAIL
   - open source system optimizer and application monitor
   - https://oguzhaninan.github.io/Stacer-Web/
-  - `sudo add-apt-repository ppa:oguzhaninan/stacer`
-  - `sudo apt-get update && sudo apt-get install stacer`
-- GtkOrphan
-  - LAB FAIL
-  - scans for orphaned packages upon launch
-  - `sudo apt update && sudo apt instal gtkorphan`
+  - Install
+    - `sudo add-apt-repository ppa:oguzhaninan/stacer`
+    - `sudo apt-get update && sudo apt-get install -y stacer`
+    - This method is failing in the lab, to remove the repo causing the problem:
+      - `sudo add-apt-repository --remove ppa:oguzhaninan/stacer`
+      - maybe try installing without adding the ppa
+    - https://www.ubuntuupdates.org/package/core/jammy/universe/base/stacer
+      - Download and run the .deb package
 
+NOTE GtkOrphan has been removed the from Ubuntu archive. It used to scan for orphaned packages upon launch.
 
 Other tips for a clean system:
 - avoid complication from source
@@ -296,8 +298,6 @@ Steps:
 Lychee is a photo management tool.
 
 https://lycheeorg.github.io/docs/installation.html
-
-
 
 ## Learn More
 ### Finding the IP address of mini1
