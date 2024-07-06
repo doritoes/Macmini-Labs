@@ -124,16 +124,10 @@ Cleanup and maintenance tools for Ubuntu
     -  run Tweaks from launcher
     - `gnome-tweaks`
 - Stacer
-  - open source system optimizer and application monitor
+  - open source system optimizer and application monitor that can also clean junk
   - https://oguzhaninan.github.io/Stacer-Web/
   - Install
-    - `sudo add-apt-repository ppa:oguzhaninan/stacer`
     - `sudo apt-get update && sudo apt-get install -y stacer`
-    - This method is failing in the lab, to remove the repo causing the problem:
-      - `sudo add-apt-repository --remove ppa:oguzhaninan/stacer`
-      - maybe try installing without adding the ppa
-    - https://www.ubuntuupdates.org/package/core/jammy/universe/base/stacer
-      - Download and run the .deb package
 
 NOTE GtkOrphan has been removed the from Ubuntu archive. It used to scan for orphaned packages upon launch.
 
@@ -198,11 +192,39 @@ LAMP = Linux Apache MySQL PHP
 
 - Install all the pieces manually
   - https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
+  - `sudo apt update && sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql`
+  - Make index.php the default index page
+    - sudo vi /etc/apache2/mods-enabled/dir.conf
+    - move index.php to be the first item after DirectoryIndex
+      - i.e., `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`
+  - Test PHP processing
+    - copy this file to /var/www/html/
+      - [index.php](index.php)
+~~~
+<?php phpinfo(); ?>
+~~~
+  - Restart Web server
+    - `sudo systemctl restart apache2`
+  - Load the page to test php processing
+    - http://127.0.0.1
+    - should show the phpinfo() detailed output
+  - Secure MySQL
+    - `sudo mysql_secure_installation`
+    - Validate password component: No (this is a lab)
+    - Remove anonymous users: Yes
+    - Disallow root login remotely: Yes
+    - Remove test database and access to it: Yes
+    - Reload privilege tables now: Yes
+    - To access the mysql cli:
+      - YES: sudo mysql
+      - NO: mysql -u root -p
 - Use a Docker image
   - https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
   - Install docker if needed
-    - if you qualify for Docker Desktop (beware the licensing changes!): https://docs.docker.com/desktop/install/ubuntu/
-    - otherwise https://gcore.com/learning/how-to-install-docker-ubuntu/
+    - `sudo apt update && sudo apt install -y curl`
+    - `curl -fsSL https://get.docker.com -o get-docker.sh`
+    - `sudo sh ./get-docker.sh --dry-run`
+    - `sudo sh ./get-docker.sh`
   - Create a project directory
     - `mkdir lamp-docker && cd lamp-docker`
   - Create the file [docker-compose.yml](docker-compose.yml)
@@ -223,19 +245,17 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
   - optionally add Upgrade Plug-In
   - Click Download
 - Open Terminal
-- Copy the downloaded .tgz file to the htdocs directory
-  - Example if your volume is named macOS
-  - `cp Downloads/docuwiki*tgz _________________`
+- Copy the downloaded .tgz file to the web root
+  - `cp Downloads/docuwiki*tgz /var/www/html`
 - Unpack the tgz file
-  - Example if your volume is named macOS
-  - `cd ______________________`
+  - `cd /var/www/html`
   - `tar xzvf dokuwiki-[tab complete]`
 - Run the Dokuwiki installation wizard
-  - http://127.0.0.1:8888/dokuwiki/install.php
+  - http://127.0.0.1/dokuwiki/install.php
 - Clean up
   - delete the install.php file from the dokuwiki folder
-  - delete the .tgz file from the htdocs folder
-- Access the wiki at http://127.0.0.1:8888/dokuwiki/
+  - delete the .tgz file from the /var/www/html folder
+- Access the wiki at http://127.0.0.1/dokuwiki/
 
 ## Install LAMP Apps
 ### Simple-LAMP
