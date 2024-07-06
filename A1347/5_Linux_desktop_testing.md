@@ -228,6 +228,8 @@ LAMP = Linux Apache MySQL PHP
   - Create a project directory
     - `mkdir lamp-docker && cd lamp-docker`
   - Create the file [docker-compose.yml](docker-compose.yml)
+  - If /var/www/html doesn't exist yet
+    - `sudo mkdir -p /var/www/html`
   - Create the html directory and put your web application or HTML files inside it
     - `mkdir html`
     - If you don't have any files handy, put a copy of [index.php](index.php) there; it will display the output of phpinfo()
