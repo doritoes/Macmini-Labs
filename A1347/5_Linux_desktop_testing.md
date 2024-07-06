@@ -128,6 +128,9 @@ Cleanup and maintenance tools for Ubuntu
   - https://oguzhaninan.github.io/Stacer-Web/
   - Install
     - `sudo apt-get update && sudo apt-get install -y stacer`
+  - Run
+    - Run Stacer from the launcer
+    - `stacer`
 
 NOTE GtkOrphan has been removed the from Ubuntu archive. It used to scan for orphaned packages upon launch.
 
@@ -253,14 +256,16 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
   - Click Download
 - Open Terminal
 - Copy the downloaded .tgz file to the web root
-  - `cp Downloads/docuwiki*tgz /var/www/html`
+  - `sudo cp Downloads/dokuwiki*tgz /var/www/html`
 - Unpack the tgz file
   - `cd /var/www/html`
-  - `tar xzvf dokuwiki-[tab complete]`
+  - `sudo tar xzvf dokuwiki-[tab complete]`
+- Set permissions
+  - `sudo chown -R www-data:www-data /var/www/html/dokuwiki`
 - Run the Dokuwiki installation wizard
   - http://127.0.0.1/dokuwiki/install.php
 - Clean up
-  - delete the install.php file from the dokuwiki folder
+  - delete the install.php file from the /var/www/dokuwiki folder
   - delete the .tgz file from the /var/www/html folder
 - Access the wiki at http://127.0.0.1/dokuwiki/
 
