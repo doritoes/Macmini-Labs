@@ -200,9 +200,6 @@ LAMP = Linux Apache MySQL PHP
   - Test PHP processing
     - copy this file to /var/www/html/
       - [index.php](index.php)
-~~~
-<?php phpinfo(); ?>
-~~~
   - Restart Web server
     - `sudo systemctl restart apache2`
   - Load the page to test php processing
@@ -230,11 +227,17 @@ LAMP = Linux Apache MySQL PHP
   - Create the file [docker-compose.yml](docker-compose.yml)
   - If /var/www/html doesn't exist yet
     - `sudo mkdir -p /var/www/html`
-  - Create the html directory and put your web application or HTML files inside it
-    - `mkdir html`
+  - Put your web application or HTML files inside it
     - If you don't have any files handy, put a copy of [index.php](index.php) there; it will display the output of phpinfo()
   - Build and run the containers
-    - `docker-compose up -d`
+    - Install docker-compose
+        - https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04
+        - `mkdir -p ~/.docker/cli-plugins/`
+        - `curl -SL https://github.com/docker/compose/releases/download/v2.3.3/docker-compose-linux-x86_64 -o ~/.docker/cli-plugins/docker-compose`
+        - `chmod +x ~/.docker/cli-plugins/docker-compose`
+        - `sudo ln -s ~/.docker/cli-plugins/docker-compose /usr/sbin`
+        - `docker-compose version`
+    - `sudo docker-compose up -d`
   - Test access:
     - Web site: http://localhost
     - PHPMyAdmin: http://localhost:8080
