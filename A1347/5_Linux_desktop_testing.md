@@ -190,6 +190,8 @@ NOTE The Ultimate Boot CD (UBCD) does not support UEFI boot.
 ## Install LAMP Environment
 LAMP = Linux Apache MySQL PHP
 
+Here are 2 ways to set up the LAMP environment. They both point to the same web root data and same mysql data on the system/
+
 - Install all the pieces manually
   - https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
   - `sudo apt update && sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql`
