@@ -273,21 +273,22 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
 ### Simple-LAMP
 - https://github.com/qyjohn/simple-lamp
 - Open Terminal
-- Change directory to the htdocs directory
-  - Example if your volume is named macOS
-  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Change directory to the html root
+  - `cd /var/www/html`
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
-- Normally we would use `mysql` client to do the initial configuration. However, the mysql-client failed to build/install on High Sierra
+- Normally we would use `mysql` client to do the initial configuration. In this case we will create a 
 - Create `install.php` file to perform the same options
   - [install.php](install.php)
 - Configure the app:
-  - http://127.0.0.1:8888/simple-lamp/install.php
+  - http://127.0.0.1/simple-lamp/install.php
+  - or docker: http://127.0.0.1:8080/simple-lamp/install.php
 - Access the app:
-  - http://127.0.0.1:8888/simple-lamp/
+  - http://127.0.0.1/simple-lamp/
+  - or docker: http://127.0.0.1:8080/simple-lamp/
 - You can now access the app from another Lab system by using the IP address of the mini
-  - example: http://192.168.0.100:8888/simple-lamp
+  - example: http://192.168.0.100/simple-lamp
 - It's best practice to remove the `install.php` file after installation to prevent overwriting the database
 
 ### YOURLS
@@ -301,25 +302,27 @@ https://yourls.org/docs - https://github.com/YOURLS/YOURLS
 - HTTPS Support: For security reasons, we recommend hosting your YOURLS installation on a server with HTTPS support.
 
 Steps:
-- Change directory to the htdocs directory
-  - Example if your volume is named macOS
-  - `cd Volumes/macOS/Applications/MAMP/htdocs`
+- Change directory to the html root
+  - `cd /var/www/html`
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/YOURLS/YOURLS`
 - Create the MySQL database and user
   - Create `setup.php` file in htdocs/YOURLS/setup.php
   - [setup.php](setup.php)
-  - http://localhost:8888/YOURLS/setup.php
+  - http://localhost/YOURLS/setup.php
+  - or docker: http://localhost:8080/YOURLS/setup.php
 - Create config file
   - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
   - Edit the YOURLS_DB_USER value to `yourls` (in production you would add another user for YOURLS)
   - Edit the YOURLS_DB_PASS to `password` (see the setup.php file)
   - Modify YOURLS_SITE to the URL you will use to access the site
-    - e.g., http://192.168.99.100:8888/YOURLS
+    - e.g., http://192.168.99.100/YOURLS or docker http://192.168.99.100:8080/YOURLS
     - if you don't change this setting you will get a hilarious error message
   - Optionally modify the default admin credentials of: username/password
-- Navigate to http://127.0.0.1:8888/YOURLS/admin
+- Navigate to http://127.0.0.1/YOURLS/admin
+  - or docker 
+  - or docker http://127.0.0.1:8080/YOURLS/admin
 - Click Install YOURLS
 - Click the link to the admin page
 - Log in (credentials in config.php)
