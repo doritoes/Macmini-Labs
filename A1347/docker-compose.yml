@@ -14,7 +14,7 @@ services:
       MYSQL_ROOT_PASSWORD: root_password # set mysql root password here
       MYSQL_DATABASE: lamp_db # set database name here
     volumes:
-      - ./mysql_data:/var/lib/mysql # maps host's ./mysql_data in your pc to the /var/lib/mysql of the container
+      - /var/lib/mysql:/var/lib/mysql # maps host's /var/lib/mysql in your pc to the /var/lib/mysql of the container
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
