@@ -3,7 +3,7 @@ services:
   web:
     image: php:8.2-apache    #check the php version you need for your project
     ports:
-      - "80:80"    #this line maps your pc port to the container port
+      - "8080:80"    #this line maps your pc port to the container port
     depends_on:
       - db    #this line links this container to the db container
     volumes:
@@ -18,7 +18,7 @@ services:
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     ports:
-      - "8080:80"    #this line maps your pc port to the container port
+      - "8888:80"    #this line maps your pc port to the container port
     depends_on:
       - db    #this line links this container to the db container
     environment:
