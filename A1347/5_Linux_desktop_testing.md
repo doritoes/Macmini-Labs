@@ -211,6 +211,7 @@ Here are 2 ways to set up the LAMP environment. They both point to the same web 
     - http://127.0.0.1
     - should show the phpinfo() detailed output
   - Secure MySQL
+    - IMPORTANT - since this is a Lab, you may skip this step and save yourself a lot of bother
     - `sudo mysql_secure_installation`
     - Validate password component: No (this is a lab)
     - Remove anonymous users: Yes
@@ -220,6 +221,10 @@ Here are 2 ways to set up the LAMP environment. They both point to the same web 
     - To access the mysql cli:
       - YES: sudo mysql
       - NO: mysql -u root -p
+    - To renable logging in with root password:
+      - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'mynewpassword';`
+    - To switch back to socket:
+      - `ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;`
 - Use a Docker image
   - https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
   - Install docker if needed
@@ -273,7 +278,7 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
 ### Simple-LAMP
 WARNING If you configured strong password requirements when you ran `mysql_secure_installation`, you will need to use something stronger than "password" in the command below and in the config.php file. "Password1234!" works.
 
-IMPORTANT - currently the database only accepts unix sockets, so the connection for 'username' failes.
+IMPORTANT - currently the database only accepts unix sockets, so the connection for 'username' fails.
 ~~~
 Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1142 SELECT command denied to user 'username'@'localhost' for table 'upload_images' in /var/www/html/simple-lamp/index.php:118\nStack trace:\n#0 /var/www/html/simple-lamp/index.php(118): PDOStatement->execute()\n#1 /var/www/html/simple-lamp/index.php(207): retrieve_recent_uploads()\n#2 {main}\n  thrown in /var/www/html/simple-lamp/index.php on line 118
 ~~~
@@ -288,14 +293,15 @@ Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1142 S
   - `cd simple-lamp`
 - Configure MySQL
   - `sudo mysql`
-  - Paste commands
+  - Paste commands below
 ~~~
 DROP DATABASE IF EXISTS simple_lamp;
 CREATE DATABASE simple_lamp;
 USE simple_lamp;
 DROP USER IF EXISTS 'username'@'localhost';
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON simple_lamp TO 'username'@'localhost';
+GRANT ALL PRIVILEGES ON simple_lamp.* TO 'username'@'localhost';
+FLUSH PRIVILEGES;
 CREATE TABLE upload_images (
   id int(11) NOT NULL AUTO_INCREMENT,
   username varchar(255) DEFAULT '',
@@ -305,6 +311,9 @@ CREATE TABLE upload_images (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 ~~~
   - `exit`
+  - WARNING If you ran `mysql_secure_installation` you will want to run this:
+    - `ALTER USER 'username'@'localhost' IDENTIFIED WITH mysql_native_password by `Password1234!';`
+    - and update the config.php file to use the same password `Password1234!`
   - `sudo mysql -u root -p simple_lamp < simple_lamp.sql`
    - press enter (no password) when prompted for the mysql password for root
 - Set file permissions
