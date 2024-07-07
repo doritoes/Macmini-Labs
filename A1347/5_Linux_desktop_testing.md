@@ -271,6 +271,13 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
 
 ## Install LAMP Apps
 ### Simple-LAMP
+WARNING If you configured strong password requirements when you ran `mysql_secure_installation`, you will need to use something stronger than "password" in the command below and in the config.php file. "Password1234!" works.
+
+IMPORTANT - currently the database only accepts unix sockets, so the connection for 'username' failes.
+~~~
+Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1142 SELECT command denied to user 'username'@'localhost' for table 'upload_images' in /var/www/html/simple-lamp/index.php:118\nStack trace:\n#0 /var/www/html/simple-lamp/index.php(118): PDOStatement->execute()\n#1 /var/www/html/simple-lamp/index.php(207): retrieve_recent_uploads()\n#2 {main}\n  thrown in /var/www/html/simple-lamp/index.php on line 118
+~~~
+
 - https://github.com/qyjohn/simple-lamp
 - Open Terminal
 - Change directory to the html root
@@ -279,18 +286,34 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
   - `cd simple-lamp`
-- Normally we would use `mysql` client to do the initial configuration. In this case we will create a 
-- Create `install.php` file to perform the same options
-  - [install.php](install.php)
-- Configure the app:
-  - http://127.0.0.1/simple-lamp/install.php
-  - or docker: http://127.0.0.1:8080/simple-lamp/install.php
+- Configure MySQL
+  - `sudo mysql`
+  - Paste commands
+~~~
+DROP DATABASE IF EXISTS simple_lamp;
+CREATE DATABASE simple_lamp;
+USE simple_lamp;
+DROP USER IF EXISTS 'username'@'localhost';
+CREATE USER 'username'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON simple_lamp TO 'username'@'localhost';
+CREATE TABLE upload_images (
+  id int(11) NOT NULL AUTO_INCREMENT,
+  username varchar(255) DEFAULT '',
+  filename varchar(255) DEFAULT '',
+  timeline timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+~~~
+  - `exit`
+  - `sudo mysql -u root -p simple_lamp < simple_lamp.sql`
+   - press enter (no password) when prompted for the mysql password for root
+- Set file permissions
+  - `sudo chown www-data:www-data -R /var/www/html/simple-lamp/`
 - Access the app:
   - http://127.0.0.1/simple-lamp/
   - or docker: http://127.0.0.1:8080/simple-lamp/
 - You can now access the app from another Lab system by using the IP address of the mini
   - example: http://192.168.0.100/simple-lamp
-- It's best practice to remove the `install.php` file after installation to prevent overwriting the database
 
 ### YOURLS
 This is a URL shortener service app that exercises the MySQL database.
