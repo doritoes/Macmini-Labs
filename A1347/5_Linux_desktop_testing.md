@@ -339,16 +339,24 @@ Steps:
   - `cd /var/www/html`
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
-  - `git clone https://github.com/YOURLS/YOURLS`
+  - `sudo git clone https://github.com/YOURLS/YOURLS`
+- Set permissions
+  - `sudo chown www-data:www-data -R /var/www/html/YOURLS`
 - Create the MySQL database and user
-  - Create `setup.php` file in htdocs/YOURLS/setup.php
-  - [setup.php](setup.php)
-  - http://localhost/YOURLS/setup.php
-  - or docker: http://localhost:8080/YOURLS/setup.php
+  - `sudo mysql`
+~~~
+DROP DATABASE IF EXISTS yourls;
+CREATE DATABASE yourls;
+DROP USER IF EXISTS 'yourls'@'localhost';
+CREATE USER 'yourls'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON yourls.* TO 'yourls'@'localhost';
+FLUSH PRIVILEGES;
+~~~
 - Create config file
-  - Copy htdocs/YOURLS/user/config-sample.php to htdocs/YOURLS/user/config.php
+  - Copy /var/www/html/YOURLS/user/config-sample.php to /var/www/html/YOURLS/user/config.php
+  - Edit 
   - Edit the YOURLS_DB_USER value to `yourls` (in production you would add another user for YOURLS)
-  - Edit the YOURLS_DB_PASS to `password` (see the setup.php file)
+  - Edit the YOURLS_DB_PASS to the password we above (i.e. `password` unless you had to use another password because you secured your mysql installation)
   - Modify YOURLS_SITE to the URL you will use to access the site
     - e.g., http://192.168.99.100/YOURLS or docker http://192.168.99.100:8080/YOURLS
     - if you don't change this setting you will get a hilarious error message
@@ -356,10 +364,10 @@ Steps:
 - Navigate to http://127.0.0.1/YOURLS/admin
   - or docker 
   - or docker http://127.0.0.1:8080/YOURLS/admin
-- Click Install YOURLS
+- Click **Install YOURLS**
 - Click the link to the admin page
-- Log in (credentials in config.php)
-- Optionally create a web page the home directory that non-admins will see (e.g., htdocs/YOURLS/index.php)
+- Log in (credentials in config.php, default: username/password)
+- Optionally create a web page the home directory that non-admins will see (e.g., /var/www/html/YOURLS/index.php)
 - Remove the unneeded files from the YOURLS directory, such as "setup.php", "readme.html", the sample files, the git folders, etc.
 
 ### Lychee
