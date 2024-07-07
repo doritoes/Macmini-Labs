@@ -381,6 +381,8 @@ Steps:
   - `sudo mysql`
   - `ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`
   - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'password';`
+  - `CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';
+  - `GRANT ALL PRIVILEGES ON *.* TO 'lycheeuser'@'localhost';`
   - `exit`
 - Configure
   - http://127.0.0.1/Lychee
