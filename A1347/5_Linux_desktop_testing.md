@@ -362,7 +362,6 @@ FLUSH PRIVILEGES;
     - if you don't change this setting you will get a hilarious error message
   - Optionally modify the default admin credentials of: username/password
 - Navigate to http://127.0.0.1/YOURLS/admin
-  - or docker 
   - or docker http://127.0.0.1:8080/YOURLS/admin
 - Click **Install YOURLS**
 - Click the link to the admin page
@@ -374,6 +373,46 @@ FLUSH PRIVILEGES;
 Lychee is a photo management tool.
 
 https://lycheeorg.github.io/docs/installation.html
+
+Lychee is a photo management tool. We are going install an older version to keep things simple. The latest version is intended to be installed using npm, beyond the scope of our limited environment.
+
+https://github.com/electerious/Lychee
+
+Steps:
+- Change directory to the /var/www/html directory
+- Clone the repo
+  - https://github.com/electerious/Lychee
+  - `git clone https://github.com/electerious/Lychee`
+- Permissions
+  - `cd Lychee`
+  - `sudo chown www-data:www-data -R /var/www/html/Lychee
+  - `sudo chmod -R 750 uploads/ data/`
+- Configure
+  - http://127.0.0.1/Lychee
+    - or docker http://127.0.0.1:8080/Lychee
+  - Database host: leave blank
+  - Database Username: **root**
+  - Database Password: the root password you selected (you will need to re-enable root login if you ran `msql_secure_installation`)
+  - Click Connect
+  - Enter username and password for your new installation then click Create Login
+
+Troubleshooting:
+- http://127.0.0.1/Lychee/plugins/Diagnostics/index.php
+  - docker: http://127.0.0.1:8080/Lychee/plugins/Diagnostics/index.php
+ 
+CREATE DATABASE lychee;
+USE lychee;
+DROP USER IF EXISTS 'lycheeuser'@'localhost';
+CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';
+GRANT ALL PRIVILEGES ON lychee.* TO 'lycheeuser'@'localhost';
+FLUSH PRIVILEGES;
+
+Note that if you log in and try to upload a photo, you might get the error
+- No API function specified! Please take a look at the console of your browser for further details.
+- No all images had this issue in my testing
+
+Note: the latest version of Lychee is at https://github.com/LycheeOrg/Lychee
+- You can try `brew install npm` and install it, but my attempts failed.
 
 ## Learn More
 ### Finding the IP address of mini1
