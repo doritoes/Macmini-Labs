@@ -179,7 +179,10 @@ See https://openbenchmarking.org/ for more benchmarking information and learn ab
 - hw-probe
   - create a snapshot of your computer's hardware state and logs; checks operability of devices and returns a url to view the probe of the computer; suggests proper Linux kernel version for devices missing a driver
   - https://github.com/linuxhw/hw-probe
-  - there are a variety of ways to run a probe
+  - there are a variety of ways to run a probe; we will use a snap
+  - `sudo snap install hw-probe`
+  - `sudo -E hw-probe -all -upload`
+  - Open the link that is returned to view the details in your web browser
 
 NOTE The Ultimate Boot CD (UBCD) does not support UEFI boot.
 
