@@ -278,6 +278,7 @@ Dokuwiki is an open source wiki that is a good demonstration. However, it does n
 - Clone the repo
   - https://github.com/qyjohn/simple-lamp
   - `git clone https://github.com/qyjohn/simple-lamp`
+  - `cd simple-lamp`
 - Normally we would use `mysql` client to do the initial configuration. In this case we will create a 
 - Create `install.php` file to perform the same options
   - [install.php](install.php)
