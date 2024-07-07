@@ -199,10 +199,12 @@ LAMP = Linux Apache MySQL PHP
 Here are 2 ways to set up the LAMP environment. They both point to the same web root data and same mysql data on the system/
 
 - Install all the pieces manually
+  - `sudo apt update && sudo apt install -y lamp-server^'`
+    - The carrot is there on purpose and is important
+    - Alternative: `sudo apt update && sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql`
   - https://www.digitalocean.com/community/tutorials/how-to-install-lamp-stack-on-ubuntu
-  - `sudo apt update && sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql`
   - Make index.php the default index page
-    - sudo vi /etc/apache2/mods-enabled/dir.conf
+    - ``sudo vi /etc/apache2/mods-enabled/dir.conf``
     - move index.php to be the first item after DirectoryIndex
       - i.e., `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`
   - Test PHP processing
@@ -213,21 +215,6 @@ Here are 2 ways to set up the LAMP environment. They both point to the same web 
   - Load the page to test php processing
     - http://127.0.0.1
     - should show the phpinfo() detailed output
-  - Secure MySQL
-    - IMPORTANT - since this is a Lab, you may skip this step and save yourself a lot of bother
-    - `sudo mysql_secure_installation`
-    - Validate password component: No (this is a lab)
-    - Remove anonymous users: Yes
-    - Disallow root login remotely: Yes
-    - Remove test database and access to it: Yes
-    - Reload privilege tables now: Yes
-    - To access the mysql cli:
-      - YES: sudo mysql
-      - NO: mysql -u root -p
-    - To renable logging in with root password:
-      - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'mynewpassword';`
-    - To switch back to socket:
-      - `ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;`
 - Use a Docker image
   - https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
   - Install docker if needed
@@ -385,11 +372,16 @@ Steps:
 - Change directory to the /var/www/html directory
 - Clone the repo
   - https://github.com/electerious/Lychee
-  - `git clone https://github.com/electerious/Lychee`
+  - `sudo git clone https://github.com/electerious/Lychee`
 - Permissions
   - `cd Lychee`
   - `sudo chown www-data:www-data -R /var/www/html/Lychee
   - `sudo chmod -R 750 uploads/ data/`
+- Set password
+  - `sudo mysql`
+  - `ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`
+  - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'password';`
+  - `exit`
 - Configure
   - http://127.0.0.1/Lychee
     - or docker http://127.0.0.1:8080/Lychee
@@ -426,3 +418,24 @@ Remmina comes pre-installed on Ubuntu Desktop. It is handy way to connect to you
 - SSH
 - VNC
 - More!
+
+### Securing MySQL
+Many tutorials recommend running:
+
+
+This is a good idea, but can cause issues in our lab if you are not prepared.
+
+Steps:
+- `sudo mysql_secure_installation`
+- Validate password component: No (this is a lab)
+  - Remove anonymous users: Yes
+  - Disallow root login remotely: Yes
+  - Remove test database and access to it: Yes
+  - Reload privilege tables now: Yes
+  - To access the mysql cli:
+    - YES: sudo mysql
+    - NO: mysql -u root -p
+  - To renable logging in with root password:
+    - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'mynewpassword';`
+  - To switch back to socket:
+    - `ALTER USER 'root'@'localhost' IDENTIFIED WITH auth_socket;`
