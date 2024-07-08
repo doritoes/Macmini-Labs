@@ -275,6 +275,7 @@ Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1142 S
 
 - https://github.com/qyjohn/simple-lamp
 - Open Terminal
+- `sudo apt update && sudo apt install -y git`
 - Change directory to the html root
   - `cd /var/www/html`
 - Clone the repo
@@ -370,46 +371,125 @@ https://github.com/electerious/Lychee
 
 Steps:
 - Change directory to the /var/www/html directory
+  - `cd /var/www/html`
+- `sudo apt update && sudo apt install -y git`
 - Clone the repo
   - https://github.com/electerious/Lychee
   - `sudo git clone https://github.com/electerious/Lychee`
 - Permissions
   - `cd Lychee`
-  - `sudo chown www-data:www-data -R /var/www/html/Lychee
+  - `sudo chown www-data:www-data -R /var/www/html/Lychee`
   - `sudo chmod -R 750 uploads/ data/`
 - Set password
   - `sudo mysql`
-  - `ALTER USER 'root'@'localhost' IDENTIFIED BY 'password';`
-  - `ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password by 'password';`
-  - `CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';
+ - `CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';`
+  - NOOOO `ALTER USER 'lycheeuser'@'localhost' IDENTIFIED WITH mysql_native_password by 'lycheeuser_passwd';`
   - `GRANT ALL PRIVILEGES ON *.* TO 'lycheeuser'@'localhost';`
+  - `FLUSH PRIVILEGES;`
   - `exit`
 - Configure
-  - http://127.0.0.1/Lychee
-    - or docker http://127.0.0.1:8080/Lychee
+  - Paste these commands into `sudo mysql`
+~~~
+CREATE DATABASE lychee;
+USE lychee;
+CREATE TABLE IF NOT EXISTS `lychee_albums` (
+  `id` bigint(14) unsigned NOT NULL,
+  `title` varchar(100) NOT NULL DEFAULT '',
+  `description` varchar(1000) DEFAULT '',
+  `sysstamp` int(11) NOT NULL,
+  `public` tinyint(1) NOT NULL DEFAULT '0',
+  `visible` tinyint(1) NOT NULL DEFAULT '1',
+  `downloadable` tinyint(1) NOT NULL DEFAULT '0',
+  `password` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `lychee_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `time` int(11) NOT NULL, 
+  `type` varchar(11) NOT NULL,
+  `function` varchar(100) NOT NULL,
+  `line` int(11) NOT NULL,
+  `text` text,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `lychee_photos` (
+  `id` bigint(14) unsigned NOT NULL,
+  `title` varchar(100) NOT NULL DEFAULT '',
+  `description` varchar(1000) DEFAULT '',
+  `url` varchar(100) NOT NULL,
+  `tags` varchar(1000) NOT NULL DEFAULT '',
+  `public` tinyint(1) NOT NULL,
+  `type` varchar(10) NOT NULL,
+  `width` int(11) NOT NULL,
+  `height` int(11) NOT NULL,
+  `size` varchar(20) NOT NULL,
+  `iso` varchar(15) NOT NULL,
+  `aperture` varchar(20) NOT NULL,
+  `make` varchar(50) NOT NULL,
+  `model` varchar(50) NOT NULL,
+  `shutter` varchar(30) NOT NULL,
+  `focal` varchar(20) NOT NULL,
+  `takestamp` int(11) DEFAULT NULL,
+  `star` tinyint(1) NOT NULL,
+  `thumbUrl` char(37) NOT NULL,
+  `album` bigint(20) unsigned NOT NULL,
+  `checksum` char(40) DEFAULT NULL,
+  `medium` tinyint(1) NOT NULL DEFAULT '0',
+  `position` tinyint(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `Index_album` (`album`),
+  KEY `Index_star` (`star`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `lychee_settings` (
+  `key` varchar(50) NOT NULL DEFAULT '',
+  `value` varchar(200) DEFAULT ''
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO `lychee_settings` (`key`, `value`)
+VALUES 
+  ('version',''),
+  ('username',''),
+  ('password',''),
+  ('checkForUpdates','1'), 
+  ('sortingPhotos','ORDER BY id DESC'),
+  ('sortingAlbums','ORDER BY id DESC'),
+  ('imagick','1'),
+  ('dropboxKey',''),
+  ('identifier',''), 
+  ('skipDuplicates','0'),
+  ('plugins','');
+
+~~~
+- http://127.0.0.1/Lychee
+  - or docker http://127.0.0.1:8080/Lychee
   - Database host: leave blank
-  - Database Username: **root**
-  - Database Password: the root password you selected (you will need to re-enable root login if you ran `msql_secure_installation`)
+  - Database Username: **lycheeuser**
+  - Database Password: **lycheeuser_passwd**
+  - Database name: **Lychee**
   - Click Connect
+  - Create new credentials
+    - Username
+    - Password
+    - Click **Create Login**
   - Enter username and password for your new installation then click Create Login
 
 Troubleshooting:
 - http://127.0.0.1/Lychee/plugins/Diagnostics/index.php
   - docker: http://127.0.0.1:8080/Lychee/plugins/Diagnostics/index.php
  
-CREATE DATABASE lychee;
-USE lychee;
-DROP USER IF EXISTS 'lycheeuser'@'localhost';
-CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';
-GRANT ALL PRIVILEGES ON lychee.* TO 'lycheeuser'@'localhost';
-FLUSH PRIVILEGES;
-
-Note that if you log in and try to upload a photo, you might get the error
+Note that if you log in and try to upload a large photo, you might get the error
 - No API function specified! Please take a look at the console of your browser for further details.
-- No all images had this issue in my testing
+- Modify `/etc/php/8.1/apache2/php.ini` with these increased values:
+  - max_execution_time = 200
+  - post_max_size = 100M
+  - upload_max_size = 100M
+  - upload_max_filesize = 20M
+  - memory_limit = 256M
 
 Note: the latest version of Lychee is at https://github.com/LycheeOrg/Lychee
-- You can try `brew install npm` and install it, but my attempts failed.
 
 ## Learn More
 ### Finding the IP address of mini1
@@ -422,8 +502,7 @@ Remmina comes pre-installed on Ubuntu Desktop. It is handy way to connect to you
 - More!
 
 ### Securing MySQL
-Many tutorials recommend running:
-
+Many tutorials recommend running: `sudo mysql_secure_installation`
 
 This is a good idea, but can cause issues in our lab if you are not prepared.
 
