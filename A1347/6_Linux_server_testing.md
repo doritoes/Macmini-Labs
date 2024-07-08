@@ -71,15 +71,15 @@ Tips for a clean system:
 - avoid complication from source
 - remove older kernels you don't need
 - clear APT cache
-  - sudo apt clean
-  - sudo apt autoclean
-  - sudo apt autoremove
+  - `sudo apt clean`
+  - `sudo apt autoclean`
+  - `sudo apt autoremove`
 
 ### Benchmarks
 See https://openbenchmarking.org/ for more benchmarking information and learn about the Phoronix Test Suite
 - sysbench
   - Install
-    - `sudo apt update && sudo apt install sysbench`
+    - `sudo apt update && sudo apt install -y   sysbench`
   - Run
     - `sysbench cpu run`
       - single-threaded CPU benchmark
@@ -87,7 +87,7 @@ See https://openbenchmarking.org/ for more benchmarking information and learn ab
     - See also: memory, threads, fileio, and mutex
 - stress-ng
   - Install
-    - `sudo udpate && sudo apt install -y stress-ng`
+    - `sudo apt update && sudo apt install -y stress-ng`
   - Run
     - CPU
       - `uptime && stress-ng --cpu -2 --timeout 60s --metrics-brief && uptime`
@@ -96,11 +96,11 @@ See https://openbenchmarking.org/ for more benchmarking information and learn ab
     - Memory
       - `stress-ng --vm 2 --vm-bytes 1G --timeout 60s`
     - Multiple: 60 seconds with 4 cpu stressors, 2 io stressors and 1 vm stressor using 1GB of virtual memory
-      - `stress-ng --cpu 4 --io 2 --vm 1 --vm-bytes 1G --timeout 60s --metrics-brief`
+      - `stress-ng --cpu 2 --io 2 --vm 1 --vm-bytes 1G --timeout 60s --metrics-brief`
   - Read more: https://www.cyberciti.biz/faq/stress-test-linux-unix-server-with-stress-ng/
 - 7z (yes 7-zip has built-in benchmark tool)
   - Install
-    - `sudo update && sudo install -y p7zip-full`
+    - `sudo apt update && sudo apt install -y p7zip-full`
   - Run
     - single threaded: `7z b -mmt1`
     - multi-thread: `7z b`
@@ -125,19 +125,18 @@ Reference: https://www.digitalocean.com/community/tutorials/how-to-install-lamp-
   - The carrot is there on purpose and is important
   - Alternative: `sudo apt update && sudo apt install -y apache2 mysql-server php libapache2-mod-php php-mysql`
 - Make index.php the default index page
-  - ``sudo vi /etc/apache2/mods-enabled/dir.conf``
+  - `sudo vi /etc/apache2/mods-enabled/dir.conf`
   - move index.php to be the first item after DirectoryIndex
     - i.e., `DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm`
+- Restart Web server
+  - `sudo systemctl restart apache2`
 - Test PHP processing
   - copy this file to /var/www/html/
     - [index.php](index.php)
-- Restart Web server
-  - `sudo systemctl restart apache2`
 - Load the page to test php processing
   - `curl http://127.0.0.1`
-  - or access the IP address of the server remotely via browser (i.e., http://192.168.1.30)
+    - or access the IP address of the server remotely via browser (i.e., http://192.168.1.30)
   - should show the phpinfo() detailed output
-
 
 ## Install Docker
 See https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
@@ -148,26 +147,36 @@ Use the easy isntallation method
 - `sudo sh ./get-docker.sh --dry-run`
 - `sudo sh ./get-docker.sh`
 
+Confirm
+  - `sudo docker run hello-world`
+  - `sudo docker run -it ubuntu bash`
+    - `exit` to leave the container
+  - `sudo docker images`
+  - `sudo docker system prune -a --volumes`
+
 ## NAS
 - Time Machine Backup
-See https://www.dimov.xyz/ubuntu-20-04-setting-up-mac-os-time-machine-server/
+  - See https://www.dimov.xyz/ubuntu-20-04-setting-up-mac-os-time-machine-server/
 - File server
   - SMB
-    - sudo apt install samba
+    - `sudo apt update && sudo apt install -y samba`
     - modify /etc/samba/smb.conf
+      - `sudo vi /etc/samba/smb.conf`
     - uncomment or add security = user, this can be found under the authentication header in the file.
     - Add the following
 ~~~
-[Fred]
-comment = Fred's Files
-path = /path/to/folder
+[Lab]
+comment = Lab's Files
+path = /home/lab
 writable = yes
 read only = yes
 create mask = 0755
 available = yes
 ~~~
-    - add a password to your user: `sudo smbpassword fred`
+      - What permissions does this give you? Can you copy files? Edit files? Delete files?
     - `sudo sytemctl restart smbd`
+    - Create SMB user and set the password
+      - `sudo smbpasswd -a lab`
   - NFS
     - Reference: https://reintech.io/blog/setting-up-nfs-server-ubuntu-22
     - `sudo apt update && sudo apt install -y nfs-kernel-server`
@@ -176,6 +185,7 @@ available = yes
     - `sudo chmod 777 /srv/nfs/share`
     - Configure NFS exports
       - edit /etc/exports
+        - `sudo vi /etc/exports`
       - Add following line to the file, replacing <client_ip> with the IP address of your client or subnet:
         - `/srv/nfs/share <client_ip>(rw,sync,no_subtree_check)`
       - `sudo exportfs -a`
