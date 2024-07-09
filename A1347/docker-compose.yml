@@ -1,0 +1,25 @@
+version: '3.8' # check if there is a new docker compose version
+services:
+  web:
+    image: php:8.2-apache
+    ports:
+      - "8080:80" # maps host port 8080 to the container port 80
+    depends_on:
+      - db # links container to the db container
+    volumes:
+      - /var/www/html:/var/www/html # maps the content of host's /var/www/html to the container's /var/www/html
+  db:
+    image: mysql:8.1.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password # set mysql root password here
+      MYSQL_DATABASE: lamp_db # set database name here
+    volumes:
+      - /var/lib/mysql:/var/lib/mysql # maps host's /var/lib/mysql in your pc to the /var/lib/mysql of the container
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8888:80" # maps host port 8888 to the container port 80
+    depends_on:
+      - db # links container to the db container
+    environment:
+      PMA_HOST: db
