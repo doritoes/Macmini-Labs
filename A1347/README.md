@@ -118,6 +118,8 @@ Cons:
 ## Proxmox
 Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
 
+[Proxmox on the Intel mini](8_Proxmox.md)
+
 ## Plex
 Media and streaming server
 
