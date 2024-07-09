@@ -1,5 +1,5 @@
 # Tails Testing
-In this step we will testing booting from a Tails USB stick for private browsing. Using a Mac Mini for private browser is very unexected, and makes a perfect tails workstation.
+In this step we will testing booting from a Tails USB stick for private browsing. Using a Mac Mini for private browser is very unexpected, and makes a perfect tails workstation.
 
 Read more at https://tails.net/index.en.html
 
