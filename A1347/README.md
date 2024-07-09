@@ -115,16 +115,8 @@ Cons:
 ## Tails Demonstration
 [Booting from Tails](7_Tails_testing.md)
 
-## Proxmox
-Proxmox is a popular hypervisor. This is another popular use for the Mac mini: run VMs and LXC containers
-
-[Proxmox on the Intel mini](8_Proxmox.md)
-
 ## Plex
-Media and streaming server
-
-## NAS
-Use MacOS file sharing
+Media and streaming server - https://eshop.macsales.com/blog/66792-mac-mini-media-server-plex/
 
 # Appendices
 - [Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
