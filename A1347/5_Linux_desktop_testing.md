@@ -54,7 +54,7 @@ See the tutorial https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview
 
 💡 You cannot SSH to mini1 at this point.
 
-## Update Pacakges
+## Update Packages
 - `sudo apt update && sudo apt upgrade -y`
 
 ## Allow Remote Access
@@ -86,7 +86,7 @@ Cleanup and maintenance tools for Ubuntu
     - `sudo add-apt-repository ppa:gerardpuig/ppa`
     - `sudo apt update && sudo apt install -y ubuntu-cleaner`
   - Run
-    - Run Ununtu Cleaner from launcher
+    - Run Ubuntu Cleaner from launcher
   - Easy to remove after using: `sudo apt remove ubuntu-cleaner && sudo apt autoremove`
   - Lab testing had "abnormal ends" trying Apps and Personal. System worked fine.
 - ucaresystem
@@ -105,7 +105,7 @@ Cleanup and maintenance tools for Ubuntu
   - Run
     - There are two variants to run from the launcher, one "as Administrator"
 - localepurge
-  - Remove unneeded locale/localization packages and prevent installation of uneed locales in future
+  - Remove unneeded locale/localization packages and prevent installation of unneeded locales in future
   - Install
     - `sudo apt install -y localepurge`
     - Follow the prompts
@@ -129,7 +129,7 @@ Cleanup and maintenance tools for Ubuntu
   - Install
     - `sudo apt-get update && sudo apt-get install -y stacer`
   - Run
-    - Run Stacer from the launcer
+    - Run Stacer from the launcher
     - `stacer`
 
 NOTE GtkOrphan has been removed the from Ubuntu archive. It used to scan for orphaned packages upon launch.
