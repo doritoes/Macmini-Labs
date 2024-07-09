@@ -1,5 +1,5 @@
 # Proxmox on the Intel Mac mini
-In this step, we will be installing Proxmox and put it through its paces. We will be installating Proxmox two ways and testing traditional VMs as well as LXC Linux containers
+In this step, we will be installing Proxmox and put it through its paces. We will be installating Proxmox two ways and testing traditional VMs as well as LXC Linux containers. The limited resources limit us to only the smallest images.
 
 There are two ways and different reasons to use them
 - Bare metal - install proxmox directly
@@ -7,8 +7,9 @@ There are two ways and different reasons to use them
 - On Debian - install Debian OS desktop, then install proxmox
   - Proxmox is more user-friendly when installed on a GUI
   - Proxymox is based on Debian
-  - The Debian installer gives you control over filesystem layoutes, etc than the Proxmox ISO installer
-  - allows controlling thing like the fan speeds, etc.
+  - Debian installer gives you control over filesystem layoutes, etc than the Proxmox ISO installer
+    - allows controlling thing like the fan speeds, etc.
+    - better driver support
 
 Important notes:
 - installing proxmox successfully doesn't always mean you will have success with running and managing your VMs
