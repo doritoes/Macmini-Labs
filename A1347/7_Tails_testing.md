@@ -4,7 +4,7 @@ In this step we will testing booting from a Tails USB stick for private browsing
 Read more at https://tails.net/index.en.html
 
 ## First things first
-You need a bootable Tails USB stick. This process requries a minimum of 8GB USB stick, and erases the contents.
+You need a bootable Tails USB stick. This process requires a minimum of 8GB USB stick, and erases the contents.
 
 Follow the instructions: https://tails.net/install/index.en.html
 
