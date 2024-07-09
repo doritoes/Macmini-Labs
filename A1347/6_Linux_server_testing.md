@@ -62,7 +62,7 @@ See the tutorial https://ubuntu.com/tutorials/install-ubuntu-server#1-overview
   - Wait for the installation to complete. You will be prompted to choose reboot
   - When prompted, remove the USB stick and press Enter
 
-## Update Pacakges
+## Update Packages
 - `sudo apt update && sudo apt upgrade -y`
 
 ## Load Maintenance Tools
@@ -141,7 +141,7 @@ Reference: https://www.digitalocean.com/community/tutorials/how-to-install-lamp-
 ## Install Docker
 See https://medium.com/@mikez_dg/how-to-set-up-a-simple-lamp-server-with-docker-images-in-2023-9b0e24476ec6
 
-Use the easy isntallation method
+Use the easy installation method
 - `sudo apt update && sudo apt install -y curl`
 - `curl -fsSL https://get.docker.com -o get-docker.sh`
 - `sudo sh ./get-docker.sh --dry-run`
