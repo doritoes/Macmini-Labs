@@ -383,7 +383,7 @@ Steps:
 - Set password
   - `sudo mysql`
  - `CREATE USER 'lycheeuser'@'localhost' IDENTIFIED BY 'lycheeuser_passwd';`
-  - NOOOO `ALTER USER 'lycheeuser'@'localhost' IDENTIFIED WITH mysql_native_password by 'lycheeuser_passwd';`
+  - NOOOO `ALTER USER 'lycheeuser'@'localhost' IDENTIFIED WITH password by 'lycheeuser_passwd';`
   - `GRANT ALL PRIVILEGES ON *.* TO 'lycheeuser'@'localhost';`
   - `FLUSH PRIVILEGES;`
   - `exit`
