@@ -116,7 +116,7 @@ Cons:
 [Booting from Tails](7_Tails_testing.md)
 
 ## Plex
-Media and streaming server - https://eshop.macsales.com/blog/66792-mac-mini-media-server-plex/
+[Plex Media Server](8_Plex.md)
 
 # Appendices
 - [Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
