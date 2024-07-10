@@ -29,8 +29,8 @@ Plex supports macOS High Sierra and later, which is perfect because that's the l
   - TIP our Lab mini has a SuperDrive for ripping DVDs
   - TIP add a miniStack drive to add more media storage
  
-  # Using the Plex server
-  Access your media server from the Plex app or connect directly to your TV.
+# Using the Plex server
+Access your media server from the Plex app or connect directly to your TV.
 
-  You can also run Apple apples like Apple Music, Podcasts, Mac TV, Apple News. Or you can use the browser to visit the usual media web sites.
+You can also run Apple apples like Apple Music, Podcasts, Mac TV, Apple News. Or you can use the browser to visit the usual media web sites.
   
