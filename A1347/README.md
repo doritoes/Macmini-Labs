@@ -88,8 +88,9 @@ Cons:
   - Caching Server
 - Web developer workstation
 - Streaming sports or movies
-- Running Proxmox
-- Running Plex
+- Plex Media Server
+- Unifi wireless manager
+- Pi-Hole ad blocker
 - More ideas: https://eshop.macsales.com/blog/76875-6-ways-you-can-use-an-old-or-refurbished-mac-mini/
 
 # Overview
@@ -116,7 +117,10 @@ Cons:
 [Booting from Tails](7_Tails_testing.md)
 
 ## Plex
-Media and streaming server - https://eshop.macsales.com/blog/66792-mac-mini-media-server-plex/
+[Plex Media Server](8_Plex.md)
+
+## Review and Learnings
+[What We Learned](9_Review.md)
 
 # Appendices
 - [Startup Key Combinations](Appendix-Startup_Key_Combinations.md)
